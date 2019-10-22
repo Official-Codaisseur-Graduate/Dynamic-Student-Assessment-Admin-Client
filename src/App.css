@@ -2,6 +2,9 @@
 padding:1rem
 }
 
+.pt-1{
+  padding-top: 10px
+}
 .form-control{
   width: 300px !important;
 }
@@ -15,11 +18,28 @@ padding:1rem
   color: white !important
 }
 
-.nav-link{
-  margin-left: 2vw;
-  margin-right: 2vw;
+.text-dark{
+  color:#333333 !important
 }
 
+.nav-link{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.text-bold{
+  font-weight: bold
+}
+
+.text-bold-spaced{
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase
+}
+
+.fs-14{
+  font-size: 14px;
+}
 /* Backgrounds */
 .bg-dark{
   background: #333333 !important;
@@ -29,4 +49,12 @@ padding:1rem
 .bg-red{
   background: #CC0000 !important;
   height: 10vh !important;
+}
+.bg-white{
+  background: #FFFFFF !important;
+  height: 14vh !important;
+}
+
+.logo{
+  vertical-align: center
 }
