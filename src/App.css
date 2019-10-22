@@ -10,3 +10,23 @@ padding:1rem
   padding-top: 10px;
   padding-left: 6vw;
 }
+
+.text-white{
+  color: white !important
+}
+
+.nav-link{
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+/* Backgrounds */
+.bg-dark{
+  background: #333333 !important;
+  height: 10vh !important;
+}
+
+.bg-red{
+  background: #CC0000 !important;
+  height: 10vh !important;
+}
