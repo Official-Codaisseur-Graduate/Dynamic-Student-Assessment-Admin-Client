@@ -7,6 +7,7 @@ import {
 
 //Stylesheets
 import './App.css';
+import 'typeface-roboto';
 
 //Components
 import NavbarContainer from './components/Navbar/NavbarContainer'
