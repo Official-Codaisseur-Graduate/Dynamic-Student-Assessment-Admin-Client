@@ -8,6 +8,8 @@ import {
 import './App.css';
 //Components
 import NavbarContainer from './components/Navbar/NavbarContainer'
+import LoginContainer from './components/Login/LoginContainer'
+import SignupContainer from './components/Signup/SignupContainer';
 
 
 function App() {
@@ -20,10 +22,10 @@ function App() {
          
           </Route>
           <Route path="/signup">
-            
+            <SignupContainer/>
           </Route>
           <Route path="/login">
-           
+            <LoginContainer/>           
           </Route>
         </Switch>
       </Router>
