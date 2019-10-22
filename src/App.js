@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Router>
       <NavbarContainer />
-      <Switch>
+    
           <Route path="/">
          
           </Route>
@@ -28,7 +28,11 @@ function App() {
           <Route path="/login">
             <LoginContainer/>           
           </Route>
-        </Switch>
+
+          <Route path="/logout">
+            <LogoutContainer/>           
+          </Route>
+
       </Router>
      
     </div>

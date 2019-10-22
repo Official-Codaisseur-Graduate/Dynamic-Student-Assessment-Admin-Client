@@ -22,7 +22,7 @@ export default class Navbar extends Component {
                 </li>
 
                 <li>
-                  <Link to='/logout' classname="logout">Logout</Link></li>
+                  <Link to='/logout' classname="logout">Log Out</Link></li>
               </ul>
 
             </nav>
