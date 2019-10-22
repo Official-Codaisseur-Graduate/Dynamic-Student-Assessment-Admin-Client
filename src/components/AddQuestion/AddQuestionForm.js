@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import Form from 'muicss/lib/react/form';
+import Input from 'muicss/lib/react/input';
+import Textarea from 'muicss/lib/react/textarea';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
 
 export default class AddQuestionForm extends Component {
     render() {
@@ -6,49 +11,49 @@ export default class AddQuestionForm extends Component {
 		const { question, rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3 } = this.props.values;
         return (
             <div>
-                <form onSubmit={onSubmit}>
-                <label>Create a new question</label>
-                <br></br>
-                 <input
-                    type="textarea"
-                    placeholder="Enter your question"
-                    value={question} 
-					onChange={onChange}/>
-                <br></br>
-                <label>Right Answer</label>
-                <br></br>
-                <input 
-                    type="textarea"
-                    placeholder="Right Answer"
-                    value={rightAnswer} 
-					onChange={onChange}/>
-                <br></br>
-                 <label>Wrong Answer</label>
-                 <br></br>
-                <input 
-                    type="textarea"
-                    placeholder="Wrong Answer"
-                    value={wrongAnswer1} 
-					onChange={onChange}/>
-                <br></br>
-                <label>Wrong Answer</label>
-                <br></br>
-                <input 
-                    type="textarea"
-                    placeholder="Wrong Answer"
-                    value={wrongAnswer2} 
-					onChange={onChange}/>
-                <br></br>
-                <label>Wrong Answer</label>
-                <br></br>
-                <input 
-                    type="textarea"
-                    placeholder="Wrong Answer"
-                    value={wrongAnswer3} 
-					onChange={onChange}/>
-              <br></br>
-                <button type="submit">Submit</button>
-                </form>
+                <Container>
+                <Form onSubmit={onSubmit}>
+                <legend 
+                className="mui--text-headline">
+                Create a new question</legend>
+                <Textarea 
+                className="Required" 
+                placeholder="Enter a new question" 
+                name="question"
+                value={question} 
+				onChange={onChange}
+                required={true}/>
+                <Input
+                className="Required" 
+                placeholder="Right Answer" 
+                name="rightAnswer"
+                value={rightAnswer} 
+				onChange={onChange}
+                required={true}/>
+                <Input 
+                className="Required" 
+                placeholder="Wrong Answer 1" 
+                name="wrongAnswer1"
+                value={wrongAnswer1} 
+				onChange={onChange}
+                required={true} />
+                <Input 
+                className="Required" 
+                placeholder="Wrong Answer 2" 
+                name="wrongAnswer2"
+                value={wrongAnswer2} 
+				onChange={onChange}
+                required={true} />
+                <Input 
+                className="Required" 
+                placeholder="Wrong Answer 3"
+                name="wrongAnswer3"
+                value={wrongAnswer3} 
+				onChange={onChange}
+                required={true} />
+                <Button variant="raised">Submit</Button>
+                </Form>
+                </Container>
             </div>
         )
     }
