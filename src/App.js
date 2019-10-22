@@ -12,6 +12,7 @@ import LoginContainer from './components/Login/LoginContainer'
 import SignupContainer from './components/Signup/SignupContainer';
 import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
 import LogoutContainer from './components/Logout/LogoutContainer'
+import AddQuestionForm from './components/AddQuestion/AddQuestionForm';
 
 
 
@@ -27,10 +28,19 @@ function App() {
             <SignupContainer/>
           </Route>
           <Route path="/login">
-            <AddQuestionContainer/>           
+           <LoginContainer />        
           </Route>
           <Route path="/logout">
             <LogoutContainer/>
+            </Route>
+            <Route path="/add-question">
+              <AddQuestionContainer />
+            </Route>
+            <Route path="/questions">
+              
+            </Route>
+            <Route path="/students">
+              
             </Route>
     </div>
   );
