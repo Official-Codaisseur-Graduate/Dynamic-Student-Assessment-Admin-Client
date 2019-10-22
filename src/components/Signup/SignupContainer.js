@@ -13,6 +13,8 @@ class SignupContainer extends Component {
 	onSubmit = (event) => {
 		event.preventDefault()
 
+		//add signup function
+
 		this.setState({
 			name: '',
 			email: '',
@@ -29,7 +31,9 @@ class SignupContainer extends Component {
 	render() {
 			return (			
 				<SignupForm
-				
+					onSubmit = {this.onSubmit}
+					onChange = {this.onChange}
+					values = {this.state}
 				/>
 			)
 		}

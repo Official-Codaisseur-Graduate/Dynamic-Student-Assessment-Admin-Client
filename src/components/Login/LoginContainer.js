@@ -28,9 +28,9 @@ class LoginContainer extends Component {
 	render() {
 		return (
 				<LoginForm
-					// onSubmit={this.onSubmit}
-					// onChange={this.onChange}
-					// values={this.state}
+					onSubmit={this.onSubmit}
+					onChange={this.onChange}
+					values={this.state}
 				/>
         )
     }

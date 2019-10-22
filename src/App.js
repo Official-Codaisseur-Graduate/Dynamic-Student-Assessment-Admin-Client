@@ -15,7 +15,6 @@ import LogoutContainer from './components/Logout/LogoutContainer'
 import AddQuestionForm from './components/AddQuestion/AddQuestionForm';
 
 
-
 function App() {
   return (
   
@@ -30,9 +29,9 @@ function App() {
           <Route path="/login">
            <LoginContainer />        
           </Route>
-          <Route path="/logout">
-            <LogoutContainer/>
-            </Route>
+
+          <Route exact path="/logout" component={LogoutContainer} />
+          
             <Route path="/add-question">
               <AddQuestionContainer />
             </Route>
