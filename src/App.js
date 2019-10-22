@@ -17,8 +17,9 @@ import LogoutContainer from './components/Logout/LogoutContainer'
 
 function App() {
   return (
+  
     <div className="App">
-      <Router>
+
       <NavbarContainer />
           <Route path="/">
           </Route>
@@ -29,9 +30,8 @@ function App() {
             <AddQuestionContainer/>           
           </Route>
           <Route path="/logout">
-            <LogoutContainer/>           
-          </Route>
-      </Router>
+            <LogoutContainer/>
+            </Route>
     </div>
   );
 }
