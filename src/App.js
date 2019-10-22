@@ -14,6 +14,7 @@ import LoginContainer from './components/Login/LoginContainer'
 import SignupContainer from './components/Signup/SignupContainer';
 import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
 import LogoutContainer from './components/Logout/LogoutContainer'
+import ListContainer  from './components/List/ListContainer'
 
 function App() {
   return (
@@ -32,9 +33,10 @@ function App() {
 
           <Route exact path="/add-question" component={AddQuestionContainer} />
 
-          <Route exact path="/questions"   /**COMPONENT HERE */    />
+          <Route exact path="/questions"   component={ListContainer}   />
           
           <Route exact path="/students"   /**COMPONENT HERE */    />
+
               
     </div>
   );
