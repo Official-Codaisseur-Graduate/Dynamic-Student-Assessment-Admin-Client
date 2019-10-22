@@ -12,6 +12,7 @@ import LoginContainer from './components/Login/LoginContainer'
 import SignupContainer from './components/Signup/SignupContainer';
 import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
 import LogoutContainer from './components/Logout/LogoutContainer'
+import ListContainer  from './components/List/ListContainer'
 
 
 
@@ -36,7 +37,7 @@ function App() {
               <AddQuestionContainer />
             </Route>
             <Route path="/questions">
-              
+              <ListContainer />
             </Route>
             <Route path="/students">
               
