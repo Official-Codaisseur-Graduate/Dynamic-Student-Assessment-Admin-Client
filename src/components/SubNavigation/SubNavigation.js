@@ -15,7 +15,7 @@ export default class SubNavigation extends Component {
                 <Link href="/add-question" >
                 <small className="text-white text-bold-spaced fs-14 nav-link">Add Questions</small>
               </Link>
-              <Link href="/questions" color="inherit" >
+              <Link href="/questions">
               <small className="text-white text-bold-spaced fs-14 nav-link">Questions</small>
               </Link>
               <Link href="/students"  >
