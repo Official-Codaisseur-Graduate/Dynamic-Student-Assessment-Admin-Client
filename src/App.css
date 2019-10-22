@@ -11,3 +11,10 @@ ul li{
   margin-left: 5px;
   margin-right: 5px;
 }
+
+input[type=textarea]{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 50px;
+  width: 150px;
+}
