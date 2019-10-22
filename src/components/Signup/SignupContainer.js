@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { signup } from '../actions/userActions'
+import { signup } from '../../actions/signup'
 import SignupForm from './SignupForm'
 
 class SignupContainer extends Component {
@@ -12,8 +12,7 @@ class SignupContainer extends Component {
 
 	onSubmit = (event) => {
 		event.preventDefault()
-
-		//add signup function
+		this.props.signup(this.state)
 
 		this.setState({
 			name: '',
@@ -45,4 +44,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(SignupContainer)
+export default connect(mapStateToProps, {signup})(SignupContainer)
