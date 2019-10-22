@@ -1,13 +1,43 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
+
 export default class SubNavigation extends Component {
     render() {
-      let s1 = {verticalAlign: 'center'};
-      let s2 = {textAlign: 'center'};
+     
         return (
             <div>
-
-<table width="45%">
+              <AppBar className="bg-dark" position="static">
+            <Toolbar>
+                
+                <Link href="/add-question" >
+                <p className="text-white nav-link">Add Questions</p>
+              </Link>
+              <Link href="/questions" color="inherit" >
+              <p className="text-white nav-link">Questions</p>
+              </Link>
+              <Link href="/students"  >
+              <p className="text-white nav-link">Students</p>
+              </Link>
+            </Toolbar>
+           
+        </AppBar>
+        
+                {/* <Typography>
+      <Link href="/add-question" >
+        <h3>Add Questions</h3>
+      </Link>
+      <Link href="/questions" color="inherit" >
+      <h3>All Questions</h3>
+      </Link>
+      <Link href="/students"  >
+      <h3>Students</h3>
+      </Link>
+                </Typography> */}
+{/* <table width="45%">
          <tbody>
            <tr style={s1}>
              <td className="mui--appbar-height" style={s2}>
@@ -21,22 +51,9 @@ export default class SubNavigation extends Component {
              </td>
            </tr>
          </tbody>
-       </table>
-                {/* <nav style={s1}>
-                <ul>
-                <li>
-                  <Link to="/add-question" className="mui--appbar-height">Add Question</Link>
-                </li>
-                <li>
-                  <Link to="/questions">All Questions</Link>
-                </li>
-                <li>
-                  <Link to="/students">Students</Link>
-                </li>
-              </ul>
-                </nav> */}
-               
-            </div>
+       </table> */}
+              
+              </div>
         )
     }
 }
