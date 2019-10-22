@@ -11,19 +11,17 @@ export default class SubNavigation extends Component {
         return (
             <div>
               <AppBar className="bg-dark" position="static">
-            <Toolbar>
-                
+            <Toolbar>  
                 <Link href="/add-question" >
-                <p className="text-white nav-link">Add Questions</p>
+                <small className="text-white text-bold-spaced fs-14 nav-link">Add Questions</small>
               </Link>
               <Link href="/questions" color="inherit" >
-              <p className="text-white nav-link">Questions</p>
+              <small className="text-white text-bold-spaced fs-14 nav-link">Questions</small>
               </Link>
               <Link href="/students"  >
-              <p className="text-white nav-link">Students</p>
+              <small className="text-white text-bold-spaced fs-14 nav-link">Students</small>
               </Link>
             </Toolbar>
-           
         </AppBar>
         
                 {/* <Typography>
