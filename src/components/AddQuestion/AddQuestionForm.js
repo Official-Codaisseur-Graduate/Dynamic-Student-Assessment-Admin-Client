@@ -1,59 +1,78 @@
 import React, { Component } from 'react'
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Textarea from 'muicss/lib/react/textarea';
-import Button from 'muicss/lib/react/button';
-import Container from 'muicss/lib/react/container';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Container from '@material-ui/core/Container';
 
 export default class AddQuestionForm extends Component {
     render() {
         const { onChange, onSubmit } = this.props;
 		const { question, rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3 } = this.props.values;
         return (
-            <div>
+            <div className="spacer-lg">
+                 
                 <Container>
-                <Form onSubmit={onSubmit}>
-                <legend 
-                className="mui--text-headline">
-                Create a new question</legend>
-                <Textarea 
-                className="Required" 
-                placeholder="Enter a new question" 
-                name="question"
-                value={question} 
-				onChange={onChange}
-                required={true}/>
-                <Input
-                className="Required" 
-                placeholder="Right Answer" 
-                name="rightAnswer"
-                value={rightAnswer} 
-				onChange={onChange}
-                required={true}/>
-                <Input 
-                className="Required" 
-                placeholder="Wrong Answer 1" 
-                name="wrongAnswer1"
-                value={wrongAnswer1} 
-				onChange={onChange}
-                required={true} />
-                <Input 
-                className="Required" 
-                placeholder="Wrong Answer 2" 
-                name="wrongAnswer2"
-                value={wrongAnswer2} 
-				onChange={onChange}
-                required={true} />
-                <Input 
-                className="Required" 
-                placeholder="Wrong Answer 3"
-                name="wrongAnswer3"
-                value={wrongAnswer3} 
-				onChange={onChange}
-                required={true} />
-                <Button variant="raised">Submit</Button>
-                </Form>
-                </Container>
+                 <Card className="card-50 component-center">
+                <CardContent>
+                   
+                    <Typography variant="h4">
+                    Add a question
+                    </Typography>
+                <form noValidate autoComplete="off">
+                <TextField
+                id="outlined-name"
+                label="Question"
+                className="form-control-lg"
+                onChange={onSubmit}
+                margin="normal"
+                variant="outlined"
+                 />
+                  <TextField
+                id="outlined-name"
+                label="Right Answer"
+                className="form-control-lg"
+                onChange={onSubmit}
+                margin="normal"
+                variant="outlined"
+                 />
+                 <TextField
+                id="outlined-name"
+                label="Wrong Answer 1"
+                className="form-control-lg"
+                onChange={onSubmit}
+                margin="normal"
+                variant="outlined"
+                 />
+                 <TextField
+                id="outlined-name"
+                label="Wrong Answer 2"
+                className="form-control-lg"
+                onChange={onSubmit}
+                margin="normal"
+                variant="outlined"
+                 />
+                 <TextField
+                id="outlined-name"
+                label="Wrong Answer 3"
+                className="form-control-lg"
+                onChange={onSubmit}
+                margin="normal"
+                variant="outlined"
+                 />
+                </form>
+                </CardContent>
+                <CardActions>
+                    <Button size="large">Add Question</Button>
+                </CardActions>
+                </Card>
+            </Container>
+            <span className="spacer-lg"></span>
             </div>
         )
     }

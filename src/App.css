@@ -2,6 +2,14 @@
 padding:1rem
 }
 
+.spacer-lg{
+  padding:8vh
+  }
+  
+.fixed-top{
+  position: fixed;
+  top: 0;
+}
 .pt-1{
   padding-top: 10px
 }
@@ -9,6 +17,17 @@ padding:1rem
   width: 300px !important;
 }
 
+.form-control-lg{
+  width: 100% !important;
+}
+.card-50{
+  width: 50%;
+}
+
+.component-center{
+  margin-left: auto;
+  margin-right: auto;
+}
 .secondary-heading{
   padding-top: 10px;
   padding-left: 6vw;

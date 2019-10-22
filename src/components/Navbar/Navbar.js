@@ -13,7 +13,7 @@ export default class Navbar extends Component {
         return (
 
           <div>
-          <AppBar className="bg-white" position="static">
+          <AppBar variant="fixed" className="bg-white" position="static">
             <Toolbar>  
                 <Link href="/home" >
                 <img className="logo pt-1" src='https://i1.wp.com/thenextwomen.com/summit/wp-content/uploads/2017/03/codaisseur-logo-long-2e9b7b7b839a33128016eb77b49ff2bb6397b6b3552523ee09273d6a5b427861.png?resize=1200%2C279&ssl=1' alt="codaisseur logo" width="260"/>
