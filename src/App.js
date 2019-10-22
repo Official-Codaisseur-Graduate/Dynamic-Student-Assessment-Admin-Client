@@ -11,6 +11,8 @@ import NavbarContainer from './components/Navbar/NavbarContainer'
 import LoginContainer from './components/Login/LoginContainer'
 import SignupContainer from './components/Signup/SignupContainer';
 import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
+import LogoutContainer from './components/Logout/LogoutContainer'
+
 
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
           </Route>
           <Route path="/login">
             <AddQuestionContainer/>           
+          </Route>
+          <Route path="/logout">
+            <LogoutContainer/>           
           </Route>
       </Router>
     </div>
