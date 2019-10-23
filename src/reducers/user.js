@@ -2,9 +2,9 @@ import { SET_ERROR, USER_LOGIN, USER_LOGOUT } from '../actions/signup';
 
 const initialState = {
     jwt: null,
-    userId: null,
-    username: null,
-    error: null
+    // userId: null,
+    // username: null,
+    // error: null
 }
 
 export default function (state = initialState, action = {}) {
