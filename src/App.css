@@ -6,6 +6,10 @@ padding:1rem
   padding:8vh
   }
   
+.spacer-y{
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
 .text-center{
   text-align: center
 }
@@ -82,4 +86,11 @@ padding:1rem
 
 .logo{
   vertical-align: center
+}
+
+
+/*Tables*/
+.table-cell{
+  padding: 20px !important;
+  font-size: 18px !important;
 }
