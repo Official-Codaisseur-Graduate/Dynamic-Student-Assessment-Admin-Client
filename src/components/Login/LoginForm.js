@@ -14,7 +14,7 @@ class LoginForm extends Component {
 		const { email, password } = this.props.values
 		return (
 				<Container>
-				<Card className="login-card">
+				<Card className="card-50">
 				<CardContent>
 				   <Typography variant="h4">
 				   Sign In
