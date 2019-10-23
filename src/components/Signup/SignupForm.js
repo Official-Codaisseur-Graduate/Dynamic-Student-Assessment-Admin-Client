@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 class SignupForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props;
-		const { name, email, password } = this.props.values;
+		const { username, email, password } = this.props.values;
 		return (
 			<div>
 				<form onSubmit={onSubmit}>
 					<input type="text" 
-						name="name" 
-						placeholder="Full name" 
-						value={name} 
+						name="username" 
+						placeholder="Username" 
+						value={username} 
 						onChange={onChange} 
 					/>
 					<input type="text" 
