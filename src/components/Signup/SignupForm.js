@@ -26,7 +26,8 @@ class SignupForm extends Component {
                 label="Username"
                 className="form-control-lg"
                 value={username} 
-						    onChange={onChange} 
+                onChange={onChange} 
+                name="username"
                 margin="normal"
                 variant="outlined"
                  />
@@ -35,7 +36,8 @@ class SignupForm extends Component {
                 label="Email"
                 className="form-control-lg"
                 value={email} 
-						    onChange={onChange} 
+                onChange={onChange} 
+                name="email"
                 margin="normal"
                 variant="outlined"
                  />
@@ -44,7 +46,8 @@ class SignupForm extends Component {
                 label="Password"
                 className="form-control-lg"
                 value={password} 
-						    onChange={onChange} 
+                onChange={onChange} 
+                name="password"
                 margin="normal"
                 variant="outlined"
                  />
