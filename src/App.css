@@ -25,6 +25,9 @@ padding:1rem
 }
 .card-50{
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh
 }
 
 .component-center{
@@ -79,11 +82,4 @@ padding:1rem
 
 .logo{
   vertical-align: center
-}
-
-.login-card{
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10vh
 }
