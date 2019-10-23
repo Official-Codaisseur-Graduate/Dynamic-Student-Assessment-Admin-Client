@@ -16,14 +16,8 @@ class AddQuestionContainer extends Component {
         event.preventDefault()
         console.log("form submitted")
         console.log("what is the state", this.state)
-        const {question,
-             rightAnswer, 
-             wrongAnswer1, 
-             wrongAnswer2, 
-             wrongAnswer3} = this.state
     }
-
-
+    
     onChange = (event) => {
         this.setState({
 			[event.target.name]: event.target.value
