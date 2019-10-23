@@ -1,35 +1,34 @@
 import React, { Component} from 'react'
-import {Link} from 'react-router-dom'
 import SubNavigation from '../SubNavigation/SubNavigation'
+import Link from '@material-ui/core/Link';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
 
 
 export default class Navbar extends Component {
     render() {
-      let s1 = {verticalAlign: 'center'};
-      let s2 = {textAlign: 'center'};
+     
         return (
 
           <div>
-          
-       <table width="30%">
-         <tbody>
-           <tr style={s1}>
-             <td className="mui--appbar-height" style={s2}>
-               <Link to="/" className="mui--text-title">Home</Link>
-              </td>
-             <td className="mui--appbar-height" style={s2}>
-             <Link to="/signup" className="mui--text-title">Sign Up</Link>
-             </td>
-             <td className="mui--appbar-height" style={s2}>
-             <Link to="/login" className="mui--text-title">Log In</Link>
-             </td>
-             <td className="mui--appbar-height" style={s2}>
-             <Link to='/logout' className="logout mui--text-title">Log Out</Link>
-             </td>
-           </tr>
-         </tbody>
-       </table>
+          <AppBar variant="fixed" className="bg-white" position="static">
+            <Toolbar>  
+                <Link href="/home" >
+                <img className="logo pt-1" src='https://i1.wp.com/thenextwomen.com/summit/wp-content/uploads/2017/03/codaisseur-logo-long-2e9b7b7b839a33128016eb77b49ff2bb6397b6b3552523ee09273d6a5b427861.png?resize=1200%2C279&ssl=1' alt="codaisseur logo" width="260"/>
+              </Link>
+              <Link href="/signup" color="inherit" >
+              <p className="text-dark text-bold-spaced nav-link pt-1">Sign Up</p>
+              </Link>
+              <Link href="/login"  >
+              <p className="text-dark text-bold-spaced nav-link pt-1">Sign In</p>
+              </Link>
+              <Link href="/logout"  >
+              <p className="text-dark text-bold-spaced nav-link pt-1">Log Out</p>
+              </Link>
+            </Toolbar>
+        </AppBar>
+    
        <SubNavigation />
           </div>
         )

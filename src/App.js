@@ -1,8 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+  BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
 
 //Stylesheets
@@ -16,6 +14,7 @@ import SignupContainer from './components/Signup/SignupContainer';
 import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
 import LogoutContainer from './components/Logout/LogoutContainer'
 import ListContainer  from './components/List/ListContainer'
+import StudentsContainer from './components/Students/StudentsContainer';
 
 function App() {
   return (
@@ -36,7 +35,7 @@ function App() {
 
           <Route exact path="/questions"   component={ListContainer}   />
           
-          <Route exact path="/students"   /**COMPONENT HERE */    />
+          <Route exact path="/students"  component={StudentsContainer}    />
 
               
     </div>

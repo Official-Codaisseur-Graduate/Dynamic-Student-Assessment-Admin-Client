@@ -1,18 +1,96 @@
-
-
-ul{
-  list-style-type: none;
+.spacer{
+padding:1rem
 }
 
-ul li{
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
+.spacer-lg{
+  padding:8vh
+  }
+  
+.spacer-y{
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+.text-center{
+  text-align: center
+}
+.fixed-top{
+  position: fixed;
+  top: 0;
+}
+.pt-1{
+  padding-top: 10px
+}
+.form-control{
+  width: 300px !important;
 }
 
-input[type=textarea]{
-  margin-top: 8px;
-  margin-bottom: 8px;
-  height: 50px;
-  width: 150px;
+.form-control-lg{
+  width: 100% !important;
+}
+.card-50{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh
+}
+
+.component-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.secondary-heading{
+  padding-top: 10px;
+  padding-left: 6vw;
+}
+
+.text-white{
+  color: white !important
+}
+
+.text-dark{
+  color:#333333 !important
+}
+
+.nav-link{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.text-bold{
+  font-weight: bold
+}
+
+.text-bold-spaced{
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase
+}
+
+.fs-14{
+  font-size: 14px;
+}
+/* Backgrounds */
+.bg-dark{
+  background: #333333 !important;
+  height: 10vh !important;
+}
+
+.bg-red{
+  background: #CC0000 !important;
+  height: 10vh !important;
+}
+.bg-white{
+  background: #FFFFFF !important;
+  height: 14vh !important;
+}
+
+.logo{
+  vertical-align: center
+}
+
+
+/*Tables*/
+.table-cell{
+  padding: 20px !important;
+  font-size: 18px !important;
 }
