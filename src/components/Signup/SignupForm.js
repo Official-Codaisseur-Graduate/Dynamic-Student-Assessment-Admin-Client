@@ -13,7 +13,7 @@ class SignupForm extends Component {
 		const { onChange, onSubmit } = this.props;
 		const { username, email, password } = this.props.values;
 		return (
-			<div>
+			<div className="background">
           <Container>
                  <Card className="card-50 component-center">
                 <CardContent>

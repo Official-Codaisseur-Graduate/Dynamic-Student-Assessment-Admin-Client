@@ -15,6 +15,7 @@ import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
 import LogoutContainer from './components/Logout/LogoutContainer'
 import ListContainer  from './components/List/ListContainer'
 import StudentsContainer from './components/Students/StudentsContainer';
+import Homepage from './components/Homepage/Homepage';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
 
       <NavbarContainer />
           
-          <Route exact path="/"   /**COMPONENT HERE */    />
+          <Route exact path="/"   component={Homepage}   />
 
           <Route exact path="/signup" component={SignupContainer} />
 
