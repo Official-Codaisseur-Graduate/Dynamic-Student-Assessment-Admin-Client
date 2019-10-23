@@ -6,6 +6,9 @@ padding:1rem
   padding:8vh
   }
   
+.text-center{
+  text-align: center
+}
 .fixed-top{
   position: fixed;
   top: 0;
@@ -76,4 +79,11 @@ padding:1rem
 
 .logo{
   vertical-align: center
+}
+
+.login-card{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh
 }
