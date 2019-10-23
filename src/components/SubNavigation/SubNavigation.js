@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
