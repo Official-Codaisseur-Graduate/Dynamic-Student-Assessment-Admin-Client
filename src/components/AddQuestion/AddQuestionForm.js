@@ -12,7 +12,7 @@ export default class AddQuestionForm extends Component {
         const { onChange, onSubmit } = this.props;
 		const { question, rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3 } = this.props.values;
         return (
-            <div>
+            <div className="background">
                  
                 <Container>
                  <Card className="card-50 component-center">

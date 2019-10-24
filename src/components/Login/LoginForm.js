@@ -13,6 +13,7 @@ class LoginForm extends Component {
 		const { onChange, onSubmit } = this.props
 		const { email, password } = this.props.values
 		return (
+				<div className="background">
 				<Container>
 
 				<Card className="card-50">
@@ -52,6 +53,7 @@ class LoginForm extends Component {
                 </Card>
 				<p className="text-center">Don't have an account yet? <Link to="/signup">Sign up</Link></p>
                 </Container>
+				</div>
 		)
 	}
 }
