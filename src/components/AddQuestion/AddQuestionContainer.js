@@ -44,6 +44,7 @@ class AddQuestionContainer extends Component {
                 onSubmit={this.onSubmit}
                 onChange={this.onChange}
                 values={this.state}
+                addedquestion={this.props.addedquestion}
                 />
             </div>
         )
