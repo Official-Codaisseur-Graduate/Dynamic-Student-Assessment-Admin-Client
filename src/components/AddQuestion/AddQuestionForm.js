@@ -6,6 +6,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 export default class AddQuestionForm extends Component {
     render() {
@@ -17,68 +23,50 @@ export default class AddQuestionForm extends Component {
                 <Container>
                  <Card className="card-50 component-center">
                 <CardContent>
-                   
                     <Typography variant="h4">
                         Add a question
                     </Typography>
-
                 <form onSubmit={onSubmit} noValidate autoComplete="off">
                     <TextField
-                        id="outlined-name"
+                        id="outlined"
                         label="Question"
-                        className="form-control-lg"
+                        className="form-control-lg-textfield"
+                        multiline
+                        rows="4"
                         onChange={onChange}
                         margin="normal"
                         variant="outlined"
                         name="question"
                         value={question}
                     />
-                    <TextField
-                        id="outlined-name"
-                        label="Right Answer"
-                        className="form-control-lg"
-                        onChange={onChange}
-                        margin="normal"
-                        variant="outlined"
-                        name="rightAnswer"
-                        value={rightAnswer}
-                    />
-                    <TextField
-                        id="outlined-name"
-                        label="Wrong Answer 1"
-                        className="form-control-lg"
-                        onChange={onChange}
-                        margin="normal"
-                        variant="outlined"
-                        name="wrongAnswer1"
-                        value={wrongAnswer1}
-                    />
-                    <TextField
-                        id="outlined-name"
-                        label="Wrong Answer 2"
-                        className="form-control-lg"
-                        onChange={onChange}
-                        margin="normal"
-                        variant="outlined"
-                        name="wrongAnswer2"
-                        value={wrongAnswer2}
-                    />
-                    <TextField
-                        id="outlined-name"
-                        label="Wrong Answer 3"
-                        className="form-control-lg"
-                        onChange={onChange}
-                        margin="normal"
-                        variant="outlined"
-                        name="wrongAnswer3"
-                        value={wrongAnswer3}
-                    />
-
-                    <CardActions>
+                    <Typography variant="subtitle1">Category </Typography>
+                    <FormControl variant="outlined">
+                        <Select
+                        className="form-control"
+                        inputProps={{
+                            name: 'age',
+                            id: 'outlined-age-simple',
+                        }}
+                        >
+                        <MenuItem value="">
+                            <em>No category</em>
+                        </MenuItem>
+                        <MenuItem value={1}>Variables</MenuItem>
+                        <MenuItem value={2}>Functions</MenuItem>
+                        <MenuItem value={3}>Global</MenuItem>
+                        <MenuItem value={4}>Local</MenuItem>
+                        <MenuItem value={5}>Type Coercion</MenuItem>
+                        <MenuItem value={6}>Statements</MenuItem>
+                        
+                        </Select>
+                    </FormControl>
+                 <CardActions>
                         <Button type="submit" size="large">Add Question</Button>
                     </CardActions>
-                </form>
 
+                    
+                </form>
+                
                 </CardContent>
                 </Card>
             </Container>

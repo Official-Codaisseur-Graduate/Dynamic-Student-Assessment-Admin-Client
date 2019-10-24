@@ -34,6 +34,10 @@ padding:1rem
 .form-control-lg{
   width: 100% !important;
 }
+
+.form-control-lg-textfield{
+  width: 100% !important;
+}
 .card-50{
   width: 50%;
   margin-left: auto;
