@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import AddQuestionForm from './AddQuestionForm'
 import {connect} from 'react-redux'
+import { addQuestion } from '../../actions/question/question'
+import { addAnswers } from '../../actions/question/question'
 
 class AddQuestionContainer extends Component {
     state = {
@@ -16,6 +18,17 @@ class AddQuestionContainer extends Component {
         event.preventDefault()
         console.log("form submitted")
         console.log("what is the state", this.state)
+        this.props.addQuestion(this.state.question)
+        this.props.addAnswers([this.state.rightAnswer, this.state.wrongAnswer1, this.state.wrongAnswer2, this.state.wrongAnswer3])
+
+        this.setState({
+            question: '',
+            rightAnswer: '',
+            wrongAnswer1: '',
+            wrongAnswer2: '',
+            wrongAnswer3: '',
+        })
+        
     }
     
     onChange = (event) => {
@@ -43,4 +56,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(AddQuestionContainer)
+export default connect(mapStateToProps, {addQuestion, addAnswers})(AddQuestionContainer)

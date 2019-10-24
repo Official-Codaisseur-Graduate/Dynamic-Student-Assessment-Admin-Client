@@ -19,54 +19,67 @@ export default class AddQuestionForm extends Component {
                 <CardContent>
                    
                     <Typography variant="h4">
-                    Add a question
+                        Add a question
                     </Typography>
-                <form noValidate autoComplete="off">
-                <TextField
-                id="outlined-name"
-                label="Question"
-                className="form-control-lg"
-                onChange={onSubmit}
-                margin="normal"
-                variant="outlined"
-                 />
-                  <TextField
-                id="outlined-name"
-                label="Right Answer"
-                className="form-control-lg"
-                onChange={onSubmit}
-                margin="normal"
-                variant="outlined"
-                 />
-                 <TextField
-                id="outlined-name"
-                label="Wrong Answer 1"
-                className="form-control-lg"
-                onChange={onSubmit}
-                margin="normal"
-                variant="outlined"
-                 />
-                 <TextField
-                id="outlined-name"
-                label="Wrong Answer 2"
-                className="form-control-lg"
-                onChange={onSubmit}
-                margin="normal"
-                variant="outlined"
-                 />
-                 <TextField
-                id="outlined-name"
-                label="Wrong Answer 3"
-                className="form-control-lg"
-                onChange={onSubmit}
-                margin="normal"
-                variant="outlined"
-                 />
+
+                <form onSubmit={onSubmit} noValidate autoComplete="off">
+                    <TextField
+                        id="outlined-name"
+                        label="Question"
+                        className="form-control-lg"
+                        onChange={onChange}
+                        margin="normal"
+                        variant="outlined"
+                        name="question"
+                        value={question}
+                    />
+                    <TextField
+                        id="outlined-name"
+                        label="Right Answer"
+                        className="form-control-lg"
+                        onChange={onChange}
+                        margin="normal"
+                        variant="outlined"
+                        name="rightAnswer"
+                        value={rightAnswer}
+                    />
+                    <TextField
+                        id="outlined-name"
+                        label="Wrong Answer 1"
+                        className="form-control-lg"
+                        onChange={onChange}
+                        margin="normal"
+                        variant="outlined"
+                        name="wrongAnswer1"
+                        value={wrongAnswer1}
+                    />
+                    <TextField
+                        id="outlined-name"
+                        label="Wrong Answer 2"
+                        className="form-control-lg"
+                        onChange={onChange}
+                        margin="normal"
+                        variant="outlined"
+                        name="wrongAnswer2"
+                        value={wrongAnswer2}
+                    />
+                    <TextField
+                        id="outlined-name"
+                        label="Wrong Answer 3"
+                        className="form-control-lg"
+                        onChange={onChange}
+                        margin="normal"
+                        variant="outlined"
+                        name="wrongAnswer3"
+                        value={wrongAnswer3}
+                    />
+
+                    <CardActions>
+                        <Button type="submit" size="large">Add Question</Button>
+                    </CardActions>
                 </form>
+
                 </CardContent>
-                <CardActions>
-                    <Button size="large">Add Question</Button>
-                </CardActions>
                 </Card>
             </Container>
             <span className="spacer-lg"></span>

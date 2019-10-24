@@ -1,5 +1,5 @@
 import request from 'superagent';
-import {baseURL} from '../constants/baseURL';
+import {baseURL} from '../../constants/baseURL';
 
 export const SET_ERROR = 'SET_ERROR';
 
