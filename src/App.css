@@ -48,6 +48,8 @@ padding:1rem
 .secondary-heading{
   padding-top: 10px;
   padding-left: 6vw;
+  color: #CC0000;
+  font-style: italic
 }
 
 .text-white{
@@ -71,6 +73,17 @@ padding:1rem
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase
+}
+.text-red{
+  color: #cc0000
+}
+
+.text-green{
+  color: green
+}
+.question{
+  color: #333;
+  font-style: italic
 }
 
 .fs-14{
