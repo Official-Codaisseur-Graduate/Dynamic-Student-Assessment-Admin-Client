@@ -57,8 +57,10 @@ class ListQuestions extends Component {
                                         <ListItem>
                                         <ListItemIcon>
                                             <span>
-                                            {answer.correct === false &&  <CloseTwoToneIcon className="text-red"/>}
-                                            {answer.correct === true &&  <CheckTwoToneIcon className="text-green"/>}
+                                            {answer.correct === false &&  
+                                            <CloseTwoToneIcon className="text-red"/>}
+                                            {answer.correct === true && 
+                                            <CheckTwoToneIcon className="text-green"/>}
                                             </span>
                                        </ListItemIcon>
                                         <ListItemText
