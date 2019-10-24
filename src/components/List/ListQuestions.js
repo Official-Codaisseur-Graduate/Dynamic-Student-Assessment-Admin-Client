@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -17,20 +16,28 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-export default class ListQuestions extends Component {
+
+class ListQuestions extends Component {
+    
     render() {
+        
         return (
             <div>
-               <Container maxWidth="md">
-                <span className="spacer-lg"></span>
+            
+                 <span className="spacer-lg"></span>
+                 <Container>
                <ExpansionPanel>
                     <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     >
-                    <Typography variant="h4">Question 1</Typography>
+                    <Typography variant="h6">Question 1</Typography>
                     <Typography className="secondary-heading">Question snippit</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
@@ -92,7 +99,7 @@ export default class ListQuestions extends Component {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     >
-                    <Typography variant="h4">Question 2</Typography>
+                    <Typography variant="h6">Question 1</Typography>
                     <Typography className="secondary-heading">Question snippit</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
@@ -113,7 +120,7 @@ export default class ListQuestions extends Component {
                     <ListItemIcon>
                         <StarHalfTwoToneIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Level 2" />
+                    <ListItemText primary="Level 1" />
                     </ListItem>
                     <ListItem button>
                     <ListItemIcon>
@@ -154,7 +161,7 @@ export default class ListQuestions extends Component {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     >
-                    <Typography variant="h4">Question 3</Typography>
+                    <Typography variant="h6">Question 1</Typography>
                     <Typography className="secondary-heading">Question snippit</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
@@ -175,7 +182,7 @@ export default class ListQuestions extends Component {
                     <ListItemIcon>
                         <StarHalfTwoToneIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Level 3" />
+                    <ListItemText primary="Level 1" />
                     </ListItem>
                     <ListItem button>
                     <ListItemIcon>
@@ -208,11 +215,77 @@ export default class ListQuestions extends Component {
                     </Grid>
                     </Grid>
                     </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <span className="spacer-lg"></span>
-                </Container>
+                    </ExpansionPanel>
+                    <span className="spacer"></span>
+                    <ExpansionPanel>
+                    <ExpansionPanelSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    >
+                    <Typography variant="h6">Question 1</Typography>
+                    <Typography className="secondary-heading">Question snippit</Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                    <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                    <Typography>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                     Suspendisse malesuada lacus ex,
+                     sit amet blandit leo lobortis eget.
+                    </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Typography variant="h5" gutterBottom>
+                        Information
+                    </Typography>
+                    <List component="nav" aria-label="main mailbox folders">
+                    <ListItem button>
+                    <ListItemIcon>
+                        <StarHalfTwoToneIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Level 1" />
+                    </ListItem>
+                    <ListItem button>
+                    <ListItemIcon>
+                        <AssessmentTwoToneIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="50% of students got this correct" />
+                    </ListItem>
+                    </List>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Typography variant="h5" gutterBottom>
+                     Category
+                    </Typography>
+                    <form className="form-control">
+                    <FormControl required className="form-control">
+                    <InputLabel  >Javascript Category</InputLabel>
+                    <Select className="form-control">
+                    <MenuItem value="" disabled>
+                        <em>Pick a category</em>
+                    </MenuItem>
+                    <MenuItem value={1}>Objects</MenuItem>
+                    <MenuItem value={2}>Arrays</MenuItem>
+                    <MenuItem value={3}>Variables</MenuItem>
+                    <MenuItem value={4}>Functions</MenuItem>
+                    <MenuItem value={5}>Methods</MenuItem>
+                    </Select>
+                    <FormHelperText>Required</FormHelperText>
+                    </FormControl>
+                    </form>
+                    </Grid>
+                    </Grid>
+                    </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                    </Container>
+                
+               
+               
 
             </div>
         )
     }
 }
+
+export default ListQuestions
