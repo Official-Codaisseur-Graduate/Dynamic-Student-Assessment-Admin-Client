@@ -14,50 +14,53 @@ class SignupForm extends Component {
 		const { username, email, password } = this.props.values;
 		return (
 			<div>
-          <Container>
-                 <Card className="card-50 component-center">
-                <CardContent>
-                    <Typography variant="h4">
-                    Sign Up
-                    </Typography>
-                <form noValidate autoComplete="off" onSubmit={onSubmit}>
-                <TextField
-                id="outlined-name"
-                label="Username"
-                className="form-control-lg"
-                value={username} 
-                onChange={onChange} 
-                name="username"
-                margin="normal"
-                variant="outlined"
-                 />
-                  <TextField
-                id="outlined-name"
-                label="Email"
-                className="form-control-lg"
-                value={email} 
-                onChange={onChange} 
-                name="email"
-                margin="normal"
-                variant="outlined"
-                 />
-                  <TextField
-                id="outlined-name"
-                label="Password"
-                className="form-control-lg"
-                value={password} 
-                onChange={onChange} 
-                name="password"
-                margin="normal"
-                variant="outlined"
-                 />
-                </form>
-                </CardContent>
-                <CardActions>
-                    <Button size="large">Sign Up</Button>
-                </CardActions>
-                </Card>
-            </Container>
+			<Container>
+
+					<Card className="card-50 component-center">
+						<CardContent>
+							<Typography variant="h4">
+								Sign Up
+							</Typography>
+
+							<form noValidate autoComplete="off" onSubmit={onSubmit}>
+							<TextField
+							id="outlined-name"
+							label="Username"
+							className="form-control-lg"
+							value={username} 
+							onChange={onChange} 
+							name="username"
+							margin="normal"
+							variant="outlined"
+							/>
+							<TextField
+							id="outlined-name"
+							label="Email"
+							className="form-control-lg"
+							value={email} 
+							onChange={onChange} 
+							name="email"
+							margin="normal"
+							variant="outlined"
+							/>
+							<TextField
+							id="outlined-name"
+							label="Password"
+							className="form-control-lg"
+							value={password} 
+							onChange={onChange} 
+							name="password"
+							margin="normal"
+							variant="outlined"
+							/>
+							
+							<CardActions>
+								<Button type="submit" size="large">Sign Up</Button>
+							</CardActions>
+						</form>
+						</CardContent>
+					</Card>
+				</Container>
             <span className="spacer-lg"></span>
 				<p className="text-center">Already have an account? <Link to="/login">Log in</Link></p>
 			</div>

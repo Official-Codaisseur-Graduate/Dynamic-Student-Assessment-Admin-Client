@@ -14,6 +14,7 @@ class LoginForm extends Component {
 		const { email, password } = this.props.values
 		return (
 				<Container>
+
 				<Card className="card-50">
 				<CardContent>
 				   <Typography variant="h4">
@@ -40,11 +41,14 @@ class LoginForm extends Component {
                 margin="normal"
                 variant="outlined"
                  />
+
+				<CardActions>
+                    <Button type="submit" size="large">Log In</Button>
+                </CardActions>
+				
                  </form>
                 </CardContent>
-                <CardActions>
-                    <Button size="large">Log In</Button>
-                </CardActions>
+                
                 </Card>
 				<p className="text-center">Don't have an account yet? <Link to="/signup">Sign up</Link></p>
                 </Container>

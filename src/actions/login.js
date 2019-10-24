@@ -22,7 +22,7 @@ export const login = (email, password) => {
 				console.log('ERROR in LogIn ---> ', error)
 				dispatch({
 					type: SET_ERROR,
-					payload: error.response.body
+					payload: error.response
 				})	
 			})
 	}
