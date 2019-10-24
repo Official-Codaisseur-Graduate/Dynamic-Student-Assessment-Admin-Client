@@ -5,16 +5,22 @@ import { baseURL } from '../../constants/baseURL'
 // export const USER_LOGIN = 'USER_LOGIN'
 // export const USER_LOGOUT = 'USER_LOGOUT'
 
-// // USER SIGNUP
-// export const USER_SIGNUP = 'USER_SIGNUP'
+export const ADDED_QUESTION = 'ADDED_QUESTION'
 export const addQuestion = (question) => {
 	console.log("ADD QUESTION data =", question)
 	return (dispatch) => {
 		request
 			.post(`${baseURL}/question`)
-			.send(question)
+            .send(question)
+            .then(response => {
+				const { questionId } = response.body
+				dispatch({
+					type: ADDED_QUESTION,
+					payload: { questionId }
+				})
+			})
 			.catch(error => {
-				console.log('ERROR in Add Question--> ', error.response);
+				console.log('ERROR in Add Question--> ', error.response)
 			})
 	}
 }
