@@ -1,4 +1,4 @@
-import { SET_ERROR, USER_LOGIN, USER_LOGOUT } from '../actions/signup';
+import { SET_ERROR, USER_LOGIN, USER_LOGOUT } from '../actions/user/signup';
 
 const initialState = {
     jwt: null,
