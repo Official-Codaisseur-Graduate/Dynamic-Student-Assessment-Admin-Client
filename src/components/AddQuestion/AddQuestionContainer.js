@@ -52,7 +52,8 @@ class AddQuestionContainer extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		addedQuestion: state
+        addedquestion: state.addedquestion,
+        user: state.user        
 	}
 }
 
