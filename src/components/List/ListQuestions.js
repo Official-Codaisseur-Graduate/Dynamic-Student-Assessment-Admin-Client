@@ -18,7 +18,7 @@ import CheckTwoToneIcon from '@material-ui/icons/CheckTwoTone';
 class ListQuestions extends Component {
     
     render() {
-        // console.log("the questions are", this.props.questions)
+        console.log("the questions are", this.props.questions)
         const questions = this.props.questions
         return (
             <div>
@@ -37,13 +37,13 @@ class ListQuestions extends Component {
                          id="panel1a-header"
                          >
                          <Typography variant="h6">Question {question.id}</Typography>
-                         <Typography className="secondary-heading">{question.content}</Typography>
+                         <Typography className="secondary-heading">{question.questionContent}</Typography>
                          </ExpansionPanelSummary>
                          <ExpansionPanelDetails>
                          <Grid container spacing={3}>
                          <Grid item xs={12}>
                          <Typography variant="h5" className="question">
-                         {question.content}
+                         {question.questionContent}
                          </Typography>
                          </Grid>
                          <Grid item xs={12}>
@@ -64,7 +64,7 @@ class ListQuestions extends Component {
                                             </span>
                                        </ListItemIcon>
                                         <ListItemText
-                                        primary={answer.content}
+                                        primary={answer.answerContent}
                                         />
                                         </ListItem>
                                         )}
@@ -97,25 +97,9 @@ class ListQuestions extends Component {
                           Category
                          </Typography>
                          <Typography gutterBottom>
-                          Current category: {question.categoryId}
+                        {question.category.topic}
                          </Typography>
-                         {/* If you want to implement form update */}
-                         {/* <form className="form-control">
-                         <FormControl required className="form-control">
-                         <InputLabel  >Javascript Category</InputLabel>
-                         <Select className="form-control">
-                         <MenuItem value="" disabled>
-                             <em>Pick a category</em>
-                         </MenuItem>
-                         <MenuItem value={1}>Objects</MenuItem>
-                         <MenuItem value={2}>Arrays</MenuItem>
-                         <MenuItem value={3}>Variables</MenuItem>
-                         <MenuItem value={4}>Functions</MenuItem>
-                         <MenuItem value={5}>Methods</MenuItem>
-                         </Select>
-                         <FormHelperText>Required</FormHelperText>
-                         </FormControl>
-                         </form> */}
+                        
                          </Grid>
                          </Grid>
                          </ExpansionPanelDetails>
