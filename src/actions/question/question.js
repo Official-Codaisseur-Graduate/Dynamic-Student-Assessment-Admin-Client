@@ -6,19 +6,19 @@ import { baseURL } from '../../constants/baseURL'
 // export const USER_LOGOUT = 'USER_LOGOUT'
 
 export const ADDED_QUESTION = 'ADDED_QUESTION'
-export const addQuestion = (question) => {
-	console.log("ADD QUESTION data =", question)
-	return (dispatch) => {
+export const addQuestion = (data) => {
+	console.log("ADD QUESTION data =", data)
+	return (data) => {
 		request
 			.post(`${baseURL}/question`)
-            .send(question)
-            .then(response => {
-				const { questionId } = response.body
-				dispatch({
-					type: ADDED_QUESTION,
-					payload: { questionId }
-				})
-			})
+            .send(data)
+            // .then(response => {
+			// 	const { questionId } = response.body
+			// 	dispatch({
+			// 		type: ADDED_QUESTION,
+			// 		payload: { questionId }
+			// 	})
+			// })
 			.catch(error => {
 				console.log('ERROR in Add Question--> ', error.response)
 			})
