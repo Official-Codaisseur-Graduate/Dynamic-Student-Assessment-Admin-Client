@@ -18,8 +18,7 @@ class AddQuestionContainer extends Component {
         this.setState({
             questionContent: '',
             categoryId: 0
-         })
-        
+         })        
     }
     
     onChange = (event) => {

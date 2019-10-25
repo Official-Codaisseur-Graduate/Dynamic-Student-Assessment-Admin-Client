@@ -16,13 +16,7 @@ import Select from '@material-ui/core/Select';
 export default class AddQuestionForm extends Component {
     render() {
         const { onChange, onSubmit} = this.props;
-        const { questionContent, categoryId } = this.props.values;
-
-        console.log("this PROPS", this.props)
-
-        console.log("this VALUES", this.props.values)
-        console.log("this CATEGORY ID", categoryId)
-        
+        const { questionContent, categoryId } = this.props.values;   
 
         return (
             <div className="background">
