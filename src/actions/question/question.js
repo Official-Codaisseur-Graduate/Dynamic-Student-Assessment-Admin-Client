@@ -1,22 +1,20 @@
 import request from 'superagent'
 import { baseURL } from '../../constants/baseURL'
 
-// export const SET_ERROR = 'SET_ERROR'
-// export const USER_LOGIN = 'USER_LOGIN'
-// export const USER_LOGOUT = 'USER_LOGOUT'
-
 export const ADDED_QUESTION = 'ADDED_QUESTION'
-export const addQuestion = (question) => {
-	console.log("ADD QUESTION data =", question)
+export const addQuestion = (data) => {
+	
 	return (dispatch) => {
+		console.log('RETURN', data)
+		const { questionContent, categoryId } = data
+		console.log('SENDING THIS TO BACKE', questionContent, categoryId)
 		request
 			.post(`${baseURL}/question`)
-            .send(question)
+            .send({questionContent, categoryId})
             .then(response => {
-				const { questionId } = response.body
 				dispatch({
 					type: ADDED_QUESTION,
-					payload: { questionId }
+					payload: response.body
 				})
 			})
 			.catch(error => {
