@@ -8,7 +8,7 @@ export const SET_QUESTIONS = 'SET_QUESTIONS';
 export const questions = () => {
 	return (dispatch) => {
 		request
-			.get(`${baseURL}/question/all`)
+			.get(`${baseURL}/question`)
 			.then(response => {
                 console.log("response.body in questions", response.body)
 				dispatch({
