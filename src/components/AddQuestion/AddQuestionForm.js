@@ -15,17 +15,20 @@ import Select from '@material-ui/core/Select';
 
 export default class AddQuestionForm extends Component {
     render() {
-        const { onChange, onSubmit } = this.props;
-		const { question, rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3 } = this.props.values;
+        const { onChange, onSubmit} = this.props;
+        const { questionContent, categoryId } = this.props.values;   
+
         return (
             <div className="background">
                  
                 <Container>
                  <Card className="card-50 component-center">
                 <CardContent>
+
                     <Typography variant="h4">
                         Add a question
                     </Typography>
+
                 <form onSubmit={onSubmit} noValidate autoComplete="off">
                     <TextField
                         id="outlined"
@@ -36,27 +39,25 @@ export default class AddQuestionForm extends Component {
                         onChange={onChange}
                         margin="normal"
                         variant="outlined"
-                        name="question"
-                        value={question}
+                        name="questionContent"
+                        value={questionContent}
                     />
                     <Typography variant="subtitle1">Category </Typography>
-                    <FormControl variant="outlined">
+                    <FormControl variant="outlined" label = "Category" placeholder = "Category">
                         <Select
                         className="form-control"
-                        inputProps={{
-                            name: 'age',
-                            id: 'outlined-age-simple',
-                        }}
+                        onChange={onChange}
+                        value = {categoryId}
+                        name='categoryId'
                         >
-                        <MenuItem value="">
-                            <em>No category</em>
-                        </MenuItem>
-                        <MenuItem value={1}>Variables</MenuItem>
-                        <MenuItem value={2}>Functions</MenuItem>
-                        <MenuItem value={3}>Global</MenuItem>
-                        <MenuItem value={4}>Local</MenuItem>
-                        <MenuItem value={5}>Type Coercion</MenuItem>
-                        <MenuItem value={6}>Statements</MenuItem>
+                        
+                        <MenuItem value={0} key='Please pick a category'> Please pick a category </MenuItem>
+                        <MenuItem value={1} key='Variables'> Variables </MenuItem>
+                        <MenuItem value={2} key='Functions'> Functions </MenuItem>
+                        <MenuItem value={3} key='Global'> Global </MenuItem>
+                        <MenuItem value={4} key='Local'> Local </MenuItem>
+                        <MenuItem value={5} key='Type Coercion'> Type Coercion </MenuItem>
+                        <MenuItem value={6} key='Statements'> Statements </MenuItem>
                         
                         </Select>
                     </FormControl>
@@ -64,7 +65,6 @@ export default class AddQuestionForm extends Component {
                         <Button type="submit" size="large">Add Question</Button>
                     </CardActions>
 
-                    
                 </form>
                 
                 </CardContent>
