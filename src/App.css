@@ -1,13 +1,120 @@
-.App {
-  text-align: center;
+.background{
+  background: url('./constants/bg.png');
+  /* background: url('https://vectr.com/tmp/a5Cpw0Nj34/cl8ePfAwW.png?width=1920&height=1080&select=g1eWoPZ1eI'); */
+  background-size: cover;
+  height: 400px;
+  padding: 10vh
+}
+.spacer{
+padding:1rem
 }
 
-ul{
-  list-style-type: none;
+.spacer-lg{
+  padding:8vh
+  }
+  
+.spacer-y{
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+.text-center{
+  text-align: center
+}
+.fixed-top{
+  position: fixed;
+  top: 0;
+}
+.pt-1{
+  padding-top: 10px
+}
+.form-control{
+  width: 300px !important;
 }
 
-ul li{
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
+.form-control-lg{
+  width: 100% !important;
+}
+
+.form-control-lg-textfield{
+  width: 100% !important;
+}
+.card-50{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh
+}
+
+.component-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.secondary-heading{
+  padding-top: 10px;
+  padding-left: 6vw;
+  color: #CC0000;
+  font-style: italic
+}
+
+.text-white{
+  color: white !important
+}
+
+.text-dark{
+  color:#333333 !important
+}
+
+.nav-link{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.text-bold{
+  font-weight: bold
+}
+
+.text-bold-spaced{
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase
+}
+.text-red{
+  color: #cc0000
+}
+
+.text-green{
+  color: green
+}
+.question{
+  color: #333;
+  font-style: italic
+}
+
+.fs-14{
+  font-size: 14px;
+}
+/* Backgrounds */
+.bg-dark{
+  background: #333333 !important;
+  height: 10vh !important;
+}
+
+.bg-red{
+  background: #CC0000 !important;
+  height: 10vh !important;
+}
+.bg-white{
+  background: #FFFFFF !important;
+  height: 14vh !important;
+}
+
+.logo{
+  vertical-align: center
+}
+
+
+/*Tables*/
+.table-cell{
+  padding: 20px !important;
+  font-size: 18px !important;
 }

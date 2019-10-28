@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { signup } from '../actions/userActions'
+import { signup } from '../../actions/user/signup'
 import SignupForm from './SignupForm'
 
 class SignupContainer extends Component {
 	state = {
-		name: '',
+		username: '',
 		email: '',
 		password: ''
 	}
@@ -15,7 +15,7 @@ class SignupContainer extends Component {
 		this.props.signup(this.state)
 
 		this.setState({
-			name: '',
+			username: '',
 			email: '',
 			password: ''
 		})
@@ -30,9 +30,9 @@ class SignupContainer extends Component {
 	render() {
 			return (			
 				<SignupForm
-					onSubmit={this.onSubmit}
-					onChange={this.onChange}
-					values={this.state}
+					onSubmit = {this.onSubmit}
+					onChange = {this.onChange}
+					values = {this.state}
 				/>
 			)
 		}
@@ -40,8 +40,8 @@ class SignupContainer extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		user: state.user
+		
 	}
 }
 
-export default connect(mapStateToProps, { signup })(SignupContainer)
+export default connect(mapStateToProps, {signup})(SignupContainer)
