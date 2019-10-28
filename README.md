@@ -1,7 +1,8 @@
 # ADMIN PANEL
 
 ### Intro
-    The admin panel of the Student Assessment Web-app will be used by teachers and other Codaisseur's staff. It is meant to provide functionalities like:
+
+The admin panel of the Student Assessment Web-app will be used by teachers and other Codaisseur's staff. It is meant to provide functionalities like:
 
 - Possibility to add, remove and modify questions & answers
 - Overview of the existing questions and answers and how well they are being answered 
