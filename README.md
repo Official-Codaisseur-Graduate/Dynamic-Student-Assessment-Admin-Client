@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ADMIN PANEL
 
-## Available Scripts
+Intro
+The admin panel of the Student Assessment Web-app will be used by teachers and other Codaisseur's staff. It is meant to provide functionalities like:
+Possibility to add, remove and modify questions & answers
+Overview of the existing questions and answers and how well they are being answered 
+Overview of the applicants who undertook the test 
 
-In the project directory, you can run:
+Contributors
+Gerson Lynch: https:///www.github.com/gersly
+Andrea Cogo: https://www.github.com/anderara
 
-### `npm start`
+How to set up
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone this repository with “git clone git@github.com:Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Admin-Client.git”
+Cd into the folder you just cloned
+Run “npm install” (or “npm i”)
+Run “npm run start”
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Before launching the app (step 4), please make sure that the server side is up and running.
 
-### `npm test`
+What is working
+“Sign up”: new users are able to sign up. A new user will be created on the user’s table on the back end. Please note that newly created users should sign in after signing up (see “Sign In” point for more info).
+“Sign In”: users are able to sign in. If the request to the server is handled successfully, a json web token will be sent back to the client side and stored on Redux state. Please see “User” state in Redux: it has a “jwt” property which is set to “null” if nobody logged in or will display the actual json web token after a successful attempt to sign in.
+“Logout”: clicking the logout button will dispatch an action that resets the “User” state in Redux. After being clicked, the jwt will be dropped and its value will go back to “null”. 
+“Add question”: new questions can be added in this section of the app. This will trigger a POST request to the /question router. The data sent to the back end comprehends the content of the question and category id (from the drop down menu). If the request is successful, the server will send back the id of the newly added question which is saved in the redux state “idNewQuestion”. The id of the newly added question will be needed  when uploading the answers of the question, see “TO DO” section for more info.
+“Questions”: List of all questions for the test stored in the database.
+*This is done by making a GET request to the database on the /question router.*
+		
+Render a list with expandable panels with information about the question
+Category of the question
+Percentage of students that answered correctly ( hard-coded )
+List of all possible answers for that question ( both correct and wrong answers ).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+“Students”: List of all students registered for the test or possible candidates
+ *This is done by making a GET request to the database on the `/user` router.*
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Render a table of entries that are both sortable, exportable and filterable
+Ability to update data in the table is possible ( ONLY in local state atm).
+Search function in table 
+Export table to CSV
+Adjust the view of the table ( 5, 10 or 20 rows in view )
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To do
+“Add a question” section:
+In this section the possibility to add answers is missing. The idea is to create a new child component with multiple forms in which the different answers can be uploaded. Beside adding the actual content of the answers, there should be a true/false dropdown option for each answer to set it as right or wrong. The “idNewQuestion” state of Redux is needed to link the answers to the right question in the backend. A good idea would be to make the answers’ form visible to the users only if “idNewQuestion” is present (and not “null”).
 
-### `npm run eject`
+“Students” section:
+Any update in database should trigger a PUT request to the database for the user based on his/her id 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Known issues
+“Students” section:
+Pagination in table is not working properly. ( Setting the offset of the entries results in a ‘bug’ )
