@@ -12,8 +12,13 @@ The admin panel of the Student Assessment Web-app will be used by teachers and o
 
 class 30
 
-- Gerson Lynch: https:///www.github.com/gersly
-- Andrea Cogo: https://www.github.com/anderara
+- [Gerson Lynch](https://www.github.com/gersly)
+- [Andrea Cogo](https://www.github.com/anderara)
+
+### Related repos
+
+[Server](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Server)
+[Admin](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Admin-Client)
 
 ### How to set up
 
