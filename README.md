@@ -17,8 +17,8 @@ class 30
 
 ### Related repos
 
-[Server](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Server)
-[Admin](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Admin-Client)
+- [Server](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Server)
+- [Admin](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Admin-Client)
 
 ### How to set up
 
