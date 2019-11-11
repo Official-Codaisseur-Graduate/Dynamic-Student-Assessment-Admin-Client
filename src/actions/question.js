@@ -6,9 +6,14 @@ export const SET_ERROR = 'SET_ERROR';
 // SET QUESTIONS
 export const SET_QUESTIONS = 'SET_QUESTIONS';
 export const questions = () => {
-	return (dispatch) => {
+	return (dispatch, getState) => {
+		const state = getState()
+		const { user } = state
+		// console.log(user.jwt);
+
 		request
 			.get(`${baseURL}/question`)
+			.set("Authorization", `Bearer ${user.jwt}`)
 			.then(response => {
                 console.log("response.body in questions", response.body)
 				dispatch({
