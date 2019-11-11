@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
+const removeUnderline = { textDecoration: "none" }
 
 export default class SubNavigation extends Component {
 	render() {
@@ -10,17 +11,17 @@ export default class SubNavigation extends Component {
 			<div>
 				<AppBar className="bg-dark" position="static">
 					<Toolbar>
-						<Link to="/add-question">
+						<Link to="/add-question" style={removeUnderline}>
 							<small className="text-white text-bold-spaced fs-14 nav-link">
 								Add Questions
 							</small>
 						</Link>
-						<Link to="/questions">
+						<Link to="/questions" style={removeUnderline}>
 							<small className="text-white text-bold-spaced fs-14 nav-link">
 								Questions
 							</small>
 						</Link>
-						<Link to="/students">
+						<Link to="/students" style={removeUnderline}>
 							<small className="text-white text-bold-spaced fs-14 nav-link">
 								Students
 							</small>
