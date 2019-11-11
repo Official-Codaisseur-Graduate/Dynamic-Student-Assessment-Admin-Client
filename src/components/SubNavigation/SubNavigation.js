@@ -1,29 +1,34 @@
-import React, { Component } from 'react'
-import Link from '@material-ui/core/Link';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-
+import React, { Component } from "react"
+// import Link from '@material-ui/core/Link';
+import { Link } from "react-router-dom"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
 
 export default class SubNavigation extends Component {
-    render() {
-     
-        return (
-            <div>
-              <AppBar className="bg-dark" position="static">
-            <Toolbar>  
-                <Link href="/add-question" >
-                <small className="text-white text-bold-spaced fs-14 nav-link">Add Questions</small>
-              </Link>
-              <Link href="/questions">
-              <small className="text-white text-bold-spaced fs-14 nav-link">Questions</small>
-              </Link>
-              <Link href="/students"  >
-              <small className="text-white text-bold-spaced fs-14 nav-link">Students</small>
-              </Link>
-            </Toolbar>
-        </AppBar>
-        
-                {/* <Typography>
+	render() {
+		return (
+			<div>
+				<AppBar className="bg-dark" position="static">
+					<Toolbar>
+						<Link to="/add-question">
+							<small className="text-white text-bold-spaced fs-14 nav-link">
+								Add Questions
+							</small>
+						</Link>
+						<Link to="/questions">
+							<small className="text-white text-bold-spaced fs-14 nav-link">
+								Questions
+							</small>
+						</Link>
+						<Link to="/students">
+							<small className="text-white text-bold-spaced fs-14 nav-link">
+								Students
+							</small>
+						</Link>
+					</Toolbar>
+				</AppBar>
+
+				{/* <Typography>
       <Link href="/add-question" >
         <h3>Add Questions</h3>
       </Link>
@@ -34,7 +39,7 @@ export default class SubNavigation extends Component {
       <h3>Students</h3>
       </Link>
                 </Typography> */}
-{/* <table width="45%">
+				{/* <table width="45%">
          <tbody>
            <tr style={s1}>
              <td className="mui--appbar-height" style={s2}>
@@ -49,8 +54,7 @@ export default class SubNavigation extends Component {
            </tr>
          </tbody>
        </table> */}
-              
-              </div>
-        )
-    }
+			</div>
+		)
+	}
 }
