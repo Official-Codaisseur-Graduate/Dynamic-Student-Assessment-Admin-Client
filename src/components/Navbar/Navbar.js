@@ -7,8 +7,7 @@ import Button from "@material-ui/core/Button"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import picture from "../../constants/icon.png"
-const removeUnderline = { textDecoration: "none" }
-
+import { removeUnderline } from "../../constants/style"
 export default class Navbar extends Component {
 	render() {
 		return (

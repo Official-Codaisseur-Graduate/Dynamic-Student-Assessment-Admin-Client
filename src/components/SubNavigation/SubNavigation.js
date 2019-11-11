@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
-const removeUnderline = { textDecoration: "none" }
+import { removeUnderline } from "../../constants/style"
 
 export default class SubNavigation extends Component {
 	render() {
