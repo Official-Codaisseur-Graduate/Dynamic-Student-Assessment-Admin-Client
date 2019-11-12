@@ -21,7 +21,7 @@ class LoginForm extends Component {
 				   <Typography variant="h4">
 				   Sign In
 				   </Typography>
-			   <form noValidate autoComplete="off" onSubmit={onSubmit}>
+			   <form noValidate onSubmit={onSubmit}>
 				<TextField
                 id="outlined-name"
                 label="Email"
@@ -33,9 +33,10 @@ class LoginForm extends Component {
                 variant="outlined"
                  />
                   <TextField
-                id="outlined-name"
+                id="outlined-password-input"
                 label="Password"
-                className="form-control-lg"
+				className="form-control-lg"
+				type="password"
 				onChange={onChange}
 				name="password"
 				value={password}

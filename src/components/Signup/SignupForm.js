@@ -15,7 +15,7 @@ class SignupForm extends Component {
 		return (
 
 			<div className="background">
-			<Container>
+				<Container>
 
 					<Card className="card-50 component-center">
 						<CardContent>
@@ -24,45 +24,46 @@ class SignupForm extends Component {
 							</Typography>
 
 							<form noValidate autoComplete="off" onSubmit={onSubmit}>
-							<TextField
-							id="outlined-name"
-							label="Username"
-							className="form-control-lg"
-							value={username} 
-							onChange={onChange} 
-							name="username"
-							margin="normal"
-							variant="outlined"
-							/>
-							<TextField
-							id="outlined-name"
-							label="Email"
-							className="form-control-lg"
-							value={email} 
-							onChange={onChange} 
-							name="email"
-							margin="normal"
-							variant="outlined"
-							/>
-							<TextField
-							id="outlined-name"
-							label="Password"
-							className="form-control-lg"
-							value={password} 
-							onChange={onChange} 
-							name="password"
-							margin="normal"
-							variant="outlined"
-							/>
-							
-							<CardActions>
-								<Button type="submit" size="large">Sign Up</Button>
-							</CardActions>
-						</form>
+								<TextField
+									id="outlined-name"
+									label="Username"
+									className="form-control-lg"
+									value={username}
+									onChange={onChange}
+									name="username"
+									margin="normal"
+									variant="outlined"
+								/>
+								<TextField
+									id="outlined-name"
+									label="Email"
+									className="form-control-lg"
+									value={email}
+									onChange={onChange}
+									name="email"
+									margin="normal"
+									variant="outlined"
+								/>
+								<TextField
+									id="outlined-password-input"
+									label="Password"
+									className="form-control-lg"
+									type="password"
+									onChange={onChange}
+									name="password"
+									value={password}
+									margin="normal"
+									variant="outlined"
+								/>
+
+								<CardActions>
+									<Button type="submit" size="large">Sign Up</Button>
+								</CardActions>
+							</form>
 						</CardContent>
 					</Card>
 				</Container>
-            <span className="spacer-lg"></span>
+				<span className="spacer-lg"></span>
 				<p className="text-center">Already have an account? <Link to="/login">Log in</Link></p>
 			</div>
 		)

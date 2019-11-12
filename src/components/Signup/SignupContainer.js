@@ -19,6 +19,7 @@ class SignupContainer extends Component {
 			email: '',
 			password: ''
 		})
+		this.props.history.push(`/login`)
 	}
 
 	onChange = (event) => {
