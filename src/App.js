@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path="/logout" component={LogoutContainer} />
         </div>
         {!this.props.loggedIn ? (
-          <Route exact path="/" component={Homepage} />
+          <Route path="/" component={Homepage} />
         ) : (
             <div>
               <Route exact path="/add-question" component={AddQuestionContainer} />
