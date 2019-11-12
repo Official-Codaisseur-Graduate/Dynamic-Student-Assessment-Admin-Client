@@ -1,11 +1,13 @@
+
+
+import { Route, Redirect } from "react-router-dom"
+
 import React, { Component } from 'react'
-import {
-  BrowserRouter as Router, Switch, Route, Redirect
-} from "react-router-dom";
+
 
 //Stylesheets
-import './App.css';
-import 'typeface-roboto';
+import "./App.css"
+import "typeface-roboto"
 
 //Components
 import NavbarContainer from './components/Navbar/NavbarContainer'
@@ -53,3 +55,4 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(App);
+
