@@ -6,12 +6,10 @@ import { Link } from 'react-router-dom'
 class LogoutContainer extends Component {
 
     componentDidMount() {
-        //ADD ACTION THAT UPDATES JWT REDUX STATE
-
-
-		// this.props.dispatch(
-        //     logout()
-        // )
+      this.props.dispatch({
+        type: "USER_LOGOUT",
+        payload: { jwt: null }
+      })
 	}
 
     render() {
