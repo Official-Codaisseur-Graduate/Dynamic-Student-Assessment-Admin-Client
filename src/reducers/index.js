@@ -7,7 +7,7 @@ import allUsers from './allUsers'
 export default combineReducers({
     user,
     questions,
-    addedquestion,
+    // addedquestion,
     allUsers,
     idNewQuestion,
-})
+})  

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
@@ -11,13 +12,13 @@ export default class SubNavigation extends Component {
             <div>
               <AppBar className="bg-dark" position="static">
             <Toolbar>  
-                <Link href="/add-question" >
+                <Link to="/add-question" >
                 <small className="text-white text-bold-spaced fs-14 nav-link">Add Questions</small>
               </Link>
-              <Link href="/questions">
+              <Link to="/questions">
               <small className="text-white text-bold-spaced fs-14 nav-link">Questions</small>
               </Link>
-              <Link href="/students"  >
+              <Link to="/students"  >
               <small className="text-white text-bold-spaced fs-14 nav-link">Students</small>
               </Link>
             </Toolbar>

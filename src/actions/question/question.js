@@ -3,13 +3,19 @@ import { baseURL } from '../../constants/baseURL'
 
 export const ADDED_QUESTION = 'ADDED_QUESTION'
 export const addQuestion = (data) => {
-	
-	return (dispatch) => {
-		console.log('RETURN', data)
+
+
+	return (dispatch, getState) => {
+		const state = getState()
+		const { user } = state
+		// console.log(user.jwt);
+		
+		// console.log('RETURN', data)
 		const { questionContent, categoryId } = data
-		console.log('SENDING THIS TO BACKE', questionContent, categoryId)
+		// console.log('SENDING THIS TO BACKEND', questionContent, categoryId)
 		request
 			.post(`${baseURL}/question`)
+			.set("Authorization", `Bearer ${user.jwt}`)
             .send({questionContent, categoryId})
             .then(response => {
 				dispatch({
