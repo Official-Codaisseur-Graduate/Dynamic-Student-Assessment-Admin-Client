@@ -9,7 +9,7 @@ export const login = (email, password) => {
     console.log("Login data sent =", email, password )
 	return (dispatch) => {
 		request
-			.post(`${baseURL}/login`)
+			.post(`${baseURL}/admin/login`)
 			.send({ email, password })
 			.then(response => {
 				const { jwt } = response.body;
