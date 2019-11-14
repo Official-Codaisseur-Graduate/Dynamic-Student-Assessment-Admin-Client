@@ -13,7 +13,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 
 
 export default class AddAnswersForm extends Component {
-    
+
     render() {
         console.log(this.props.values);
 
@@ -39,10 +39,10 @@ export default class AddAnswersForm extends Component {
                                     name="answer1"
                                     value={answer1}
                                     variant="outlined"
-                                /> 
+                                />
 
                                 <FormControl variant="outlined" label="Answer1" placeholder="Answer1">
-                                <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                    <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
                                         Incorrect / Correct ?
                                     </InputLabel>
                                     <Select
@@ -53,7 +53,8 @@ export default class AddAnswersForm extends Component {
                                         onChange={onChange}
                                         value={correct1}
                                         maxwidth="50%"
-                                        name="correct1"                                     
+                                        name="correct1"
+                                        labelWidth="145"
                                     >
                                         <option></option>
                                         <option value={false}>Incorrect</option>
@@ -72,16 +73,20 @@ export default class AddAnswersForm extends Component {
                                     value={answer2}
                                     variant="outlined"
                                 />
-                                <FormControl 
-                                variant="outlined" 
-                                label="Answer 2" 
-                                placeholder="Answer 2">
-                            	<Select
+                                <FormControl
+                                    variant="outlined"
+                                    label="Answer 2"
+                                    placeholder="Answer 2">
+                                    <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                        Incorrect / Correct ?
+                                    </InputLabel>
+                                    <Select
                                         className="form-control"
                                         onChange={onChange}
                                         maxwidth="50%"
                                         value={answer2}
                                         name="correct2"
+                                        labelWidth="145"
                                     >
                                         <option>correct?</option>
                                         <option value={false}>Incorrect</option>
@@ -100,15 +105,19 @@ export default class AddAnswersForm extends Component {
                                     value={answer3}
                                     variant="outlined"
                                 />
-                                <FormControl 
-                                variant="outlined" 
-                                label="Answer 3" 
-                                placeholder="Answer 3">
-                            	<Select
+                                <FormControl
+                                    variant="outlined"
+                                    label="Answer 3"
+                                    placeholder="Answer 3">
+                                    <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                        Incorrect / Correct ?
+                                    </InputLabel>
+                                    <Select
                                         className="form-control"
                                         maxwidth="50%"
                                         value={answer3}
                                         name="correct3"
+                                        labelWidth="145"
                                     >
                                         <option>correct?</option>
                                         <option value={false}>Incorrect</option>
@@ -127,27 +136,31 @@ export default class AddAnswersForm extends Component {
                                     value={answer4}
                                     variant="outlined"
                                 />
-                                <FormControl 
-                                variant="outlined" 
-                                label="Answer 4" 
-                                placeholder="Answer 4">
-                            	<Select
+                                <FormControl
+                                    variant="outlined"
+                                    label="Answer 4"
+                                    placeholder="Answer 4">
+                                    <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                        Incorrect / Correct ?
+                                    </InputLabel>
+                                    <Select
                                         className="form-control"
                                         maxwidth="50%"
                                         value={answer4}
                                         name="correct4"
+                                        labelWidth="145"
                                     >
                                         <option>correct?</option>
                                         <option value={false}>Incorrect</option>
                                         <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
-                                <CardActions style={{justifyContent: 'center'}}>
-                                    <Button type="submit" 
-                                    size="large"
-                                    color="secondary"
-                                    variant="contained">
-                                        Add Answer 
+                                <CardActions style={{ justifyContent: 'center' }}>
+                                    <Button type="submit"
+                                        size="large"
+                                        color="secondary"
+                                        variant="contained">
+                                        Add Answer
 									</Button>
                                 </CardActions>
                             </form>
