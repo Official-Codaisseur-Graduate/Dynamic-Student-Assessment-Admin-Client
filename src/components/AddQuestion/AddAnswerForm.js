@@ -12,6 +12,8 @@ import Select from "@material-ui/core/Select"
 
 export default class AddAnswersForm extends Component {
     render() {
+        console.log(this.props.values);
+        
         const { onChange, onSubmit } = this.props
         const { answer1, answer2, answer3, answer4 } = this.props.values
 
@@ -21,10 +23,8 @@ export default class AddAnswersForm extends Component {
                     <Card className="card-50 component-center">
                         <CardContent>
                             <Typography variant="h4"><b>Add Answers</b></Typography>
-                            <form 
-                            onSubmit={onSubmit} 
-                            noValidate 
-                            autoComplete="off">
+
+                            <form onSubmit={onSubmit} noValidate autoComplete="off">
                                 <TextField
                                     id="outlined-basic"
                                     className="form-control-lg-textfield"
@@ -44,22 +44,12 @@ export default class AddAnswersForm extends Component {
                             	<Select
                                         className="form-control"
                                         maxwidth="50%"
-										onChange={onChange}
-										value="answer1"
-										name="answer1"
-									>
-                                    <MenuItem value={0} key="Incorrect/Correct">
-                                    {" "}
-                                    Incorrect/Correct{" "}
-                                    </MenuItem>
-                                    <MenuItem value={true} key="Incorrect">
-                                    {" "}
-                                    Incorrect{" "}
-                                    </MenuItem>
-                                    <MenuItem value={false} key="Correct">
-                                    {" "}
-                                    Correct{" "}
-                                    </MenuItem>
+                                        value="answer1"
+                                        name="correct1"
+                                    >
+                                        <option>correct?</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <TextField
@@ -82,21 +72,12 @@ export default class AddAnswersForm extends Component {
                                         className="form-control"
                                         onChange={onChange}
                                         maxwidth="50%"
-										value="answer2"
-										name="answer2"
-									>
-                                    <MenuItem value={0} key="Incorrect/Correct">
-                                    {" "}
-                                    Incorrect/Correct{" "}
-                                    </MenuItem>
-                                    <MenuItem value={true} key="Incorrect">
-                                    {" "}
-                                    Incorrect{" "}
-                                    </MenuItem>
-                                    <MenuItem value={false} key="Correct">
-                                    {" "}
-                                    Correct{" "}
-                                    </MenuItem>
+                                        value="answer2"
+                                        name="correct2"
+                                    >
+                                        <option>correct?</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <TextField
@@ -107,7 +88,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer3"
+                                    name="answer3"
                                     value={answer3}
                                     variant="outlined"
                                 />
@@ -118,22 +99,12 @@ export default class AddAnswersForm extends Component {
                             	<Select
                                         className="form-control"
                                         maxwidth="50%"
-										onChange={onChange}
-										value="answer3"
-										name="answer3"
-									>
-                                    <MenuItem value={0} key="Incorrect/Correct">
-                                    {" "}
-                                    Incorrect/Correct{" "}
-                                    </MenuItem>
-                                    <MenuItem value={true} key="Incorrect">
-                                    {" "}
-                                    Incorrect{" "}
-                                    </MenuItem>
-                                    <MenuItem value={false} key="Correct">
-                                    {" "}
-                                    Correct{" "}
-                                    </MenuItem>
+                                        value="answer3"
+                                        name="correct3"
+                                    >
+                                        <option>correct?</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <TextField
@@ -144,7 +115,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer4"
+                                    name="answer4"
                                     value={answer4}
                                     variant="outlined"
                                 />
@@ -155,22 +126,12 @@ export default class AddAnswersForm extends Component {
                             	<Select
                                         className="form-control"
                                         maxwidth="50%"
-										onChange={onChange}
-										value="answer4"
-										name="answer4"
-									>
-                                    <MenuItem value={0} key="Incorrect/Correct">
-                                    {" "}
-                                    Incorrect/Correct{" "}
-                                    </MenuItem>
-                                    <MenuItem value={true} key="Incorrect">
-                                    {" "}
-                                    Incorrect{" "}
-                                    </MenuItem>
-                                    <MenuItem value={false} key="Correct">
-                                    {" "}
-                                    Correct{" "}
-                                    </MenuItem>
+                                        value="answer4"
+                                        name="correct4"
+                                    >
+                                        <option>correct?</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <CardActions style={{justifyContent: 'center'}}>
