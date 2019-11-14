@@ -4,6 +4,10 @@
   height: 400px;
   padding: 10vh;
 }
+
+.backgroundlist{
+  text-align: left;
+}
 .spacer{
 padding:1rem
 }
