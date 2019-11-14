@@ -44,15 +44,19 @@ class LoginForm extends Component {
                 variant="outlined"
                  />
 
-				<CardActions>
-                    <Button type="submit" size="large">Log In</Button>
+				 <CardActions style={{justifyContent: 'center'}}>
+					<Button 
+					type="submit" 
+					variant="contained"
+					size="large"
+					color="secondary">Log In</Button>
                 </CardActions>
 				
                  </form>
                 </CardContent>
                 
                 </Card>
-				<p className="text-center">Don't have an account yet? <Link to="/signup">Sign up</Link></p>
+				<p className="text-center"><i>Don't have an account yet? </i><Link to="/signup">Sign up</Link></p>
                 </Container>
 				</div>
 		)

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import {logout} from '../actions/userActions'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class LogoutContainer extends Component {
 
@@ -15,8 +14,7 @@ class LogoutContainer extends Component {
     render() {
       return(
           <div>
-            <h3>You have succesfully logged out!</h3>
-            <p>Back to the <Link to="/">homepage</Link></p>
+           <Redirect to="/"/>
           </div>
       )
     }
@@ -24,3 +22,4 @@ class LogoutContainer extends Component {
 
   
 export default connect()(LogoutContainer);
+
