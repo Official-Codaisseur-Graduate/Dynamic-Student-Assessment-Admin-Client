@@ -5,7 +5,6 @@ import SignupForm from './SignupForm'
 
 class SignupContainer extends Component {
 	state = {
-		username: '',
 		email: '',
 		password: ''
 	}
@@ -15,7 +14,6 @@ class SignupContainer extends Component {
 		this.props.signup(this.state)
 
 		this.setState({
-			username: '',
 			email: '',
 			password: ''
 		})
