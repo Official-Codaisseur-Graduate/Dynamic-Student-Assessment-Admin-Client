@@ -84,7 +84,7 @@ export default class AddQuestionForm extends Component {
 									value={questionContent}
 								/>
 								<CardActions style={{justifyContent: 'center'}}>
-								<Button variant="contained" color="secondary">
+								<Button type="submit" variant="contained" color="secondary">
 								Add question
 							  </Button>
 								</CardActions>

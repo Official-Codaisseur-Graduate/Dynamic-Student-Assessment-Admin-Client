@@ -42,7 +42,7 @@ class AddQuestionContainer extends Component {
             categoryId: 0,
             level: 0,
         })
-        
+        this.props.history.push(`/questions`)
     }
     
     onChange = (event) => {
@@ -55,20 +55,20 @@ class AddQuestionContainer extends Component {
     render() {
         return (
             <div>
-                {/* {!this.props.newQuestion.id &&
+                {!this.props.newQuestion.id &&
                 <AddQuestionForm
                     onSubmit={this.onSubmitQuestion}
                     onChange={this.onChange}
                     values={this.state}
                 />
             }
-                {this.props.newQuestion.id && */}
+                {this.props.newQuestion.id &&
                 <AddAnswerForm
                     onSubmit={this.onSubmitAnswer}
                     onChange={this.onChange}
                     values={this.state}
                 />
-                {/* } */}
+                }
             </div>
         )
     }
