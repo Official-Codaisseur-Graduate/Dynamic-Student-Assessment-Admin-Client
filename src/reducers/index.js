@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
 import user from "./user"
-import NewQuestion from "./NewQuestion"
+import newQuestion from "./newQuestion"
 import questions from "./questions"
 import allUsers from "./allUsers"
 // import addedquestion from ""
@@ -10,6 +10,6 @@ export default combineReducers({
 	questions,
 	// addedquestion,
 	allUsers,
-	NewQuestion
+	newQuestion
 })
 

@@ -1,6 +1,6 @@
 import { ADDED_QUESTION } from '../actions/question/question';
 
-export default function (state = null, action = {}) {
+export default function (state = {}, action = {}) {
     switch (action.type) {
         case ADDED_QUESTION:
             return action.payload;

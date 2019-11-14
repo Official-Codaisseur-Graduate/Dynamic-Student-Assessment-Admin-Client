@@ -12,6 +12,8 @@ import Select from "@material-ui/core/Select"
 
 export default class AddAnswersForm extends Component {
     render() {
+        console.log(this.props.values);
+        
         const { onChange, onSubmit } = this.props
         const { answer1, answer2, answer3, answer4 } = this.props.values
 
@@ -23,6 +25,7 @@ export default class AddAnswersForm extends Component {
                             <Typography variant="h4">Add Answers</Typography>
 
                             <form onSubmit={onSubmit} noValidate autoComplete="off">
+                                
                                 <TextField
                                     id="outlined-basic"
                                     className="form-control-lg-textfield"
@@ -31,7 +34,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer1"
+                                    name="answer1"
                                     value={answer1}
                                     variant="outlined"
                                 />
@@ -46,8 +49,8 @@ export default class AddAnswersForm extends Component {
                                         name="correct1"
                                     >
                                         <option>correct?</option>
-                                        <option value={true}>Incorrect</option>
-                                        <option value={false}>Correct</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
 
@@ -59,7 +62,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer2"
+                                    name="answer2"
                                     value={answer2}
                                     variant="outlined"
                                 />
@@ -73,8 +76,8 @@ export default class AddAnswersForm extends Component {
                                         name="correct2"
                                     >
                                         <option>correct?</option>
-                                        <option value={true}>Incorrect</option>
-                                        <option value={false}>Correct</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <TextField
@@ -85,7 +88,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer3"
+                                    name="answer3"
                                     value={answer3}
                                     variant="outlined"
                                 />
@@ -99,8 +102,8 @@ export default class AddAnswersForm extends Component {
                                         name="correct3"
                                     >
                                         <option>correct?</option>
-                                        <option value={true}>Incorrect</option>
-                                        <option value={false}>Correct</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <TextField
@@ -111,7 +114,7 @@ export default class AddAnswersForm extends Component {
                                     rows="2"
                                     onChange={onChange}
                                     margin="normal"
-                                    name="Answer4"
+                                    name="answer4"
                                     value={answer4}
                                     variant="outlined"
                                 />
@@ -125,8 +128,8 @@ export default class AddAnswersForm extends Component {
                                         name="correct4"
                                     >
                                         <option>correct?</option>
-                                        <option value={true}>Incorrect</option>
-                                        <option value={false}>Correct</option>
+                                        <option value={false}>Incorrect</option>
+                                        <option value={true}>Correct</option>
                                     </Select>
                                 </FormControl>
                                 <CardActions>
