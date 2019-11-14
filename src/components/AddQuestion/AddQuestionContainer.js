@@ -11,12 +11,12 @@ class AddQuestionContainer extends Component {
         categoryId: 0,
         level: 0
     }
-
+    
     onSubmitQuestion = (event) => {
         event.preventDefault()
         console.log("Submitting a question! This is the state:", this.state)
         this.props.addQuestion(this.state)
-
+        
         this.setState({
             questionContent: '',
             categoryId: 0,
@@ -26,17 +26,17 @@ class AddQuestionContainer extends Component {
     
     onSubmitAnswer = (event) => {
         event.preventDefault()
-        console.log("Submitting answers! This is the state:", this.state)
+        console.log("New question id:", this.props.newQuestion.id)
         
         let answerdata = []
         for (let i = 1; i <= 4; i++) {
             let answer = 'answer' + i
             let correct = 'correct' + i
-            answerdata.push({ answer: this.state[answer], correct: this.state[correct], questionId: 1}) 
+            answerdata.push({ answer: this.state[answer], correct: this.state[correct], questionId: this.props.newQuestion.id}) 
             // console.log('answer', answerdata); 
         }
         this.props.addAnswers(answerdata)
-
+        
         this.setState({
             questionContent: '',
             categoryId: 0,
@@ -44,31 +44,31 @@ class AddQuestionContainer extends Component {
         })
         
     }
-
+    
     onChange = (event) => {
         event.preventDefault()
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-
+    
     render() {
         return (
             <div>
-                {/* {!this.props.newQuestion.id &&
+                {!this.props.newQuestion.id &&
                 <AddQuestionForm
                     onSubmit={this.onSubmitQuestion}
                     onChange={this.onChange}
                     values={this.state}
                 />
             }
-                {this.props.newQuestion.id && */}
+                {this.props.newQuestion.id &&
                 <AddAnswerForm
                     onSubmit={this.onSubmitAnswer}
                     onChange={this.onChange}
                     values={this.state}
                 />
-                {/* } */}
+                }
             </div>
         )
     }
