@@ -81,14 +81,17 @@ export default class AddAnswersForm extends Component {
                                         Incorrect / Correct ?
                                     </InputLabel>
                                     <Select
+                                        native
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
+                                        value={correct2}
                                         maxwidth="50%"
-                                        value={answer2}
                                         name="correct2"
                                         labelWidth="145"
                                     >
-                                        <option>correct?</option>
+                                        <option></option>
                                         <option value={false}>Incorrect</option>
                                         <option value={true}>Correct</option>
                                     </Select>
@@ -113,13 +116,17 @@ export default class AddAnswersForm extends Component {
                                         Incorrect / Correct ?
                                     </InputLabel>
                                     <Select
+                                        native
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined-label"
                                         className="form-control"
+                                        onChange={onChange}
+                                        value={correct3}
                                         maxwidth="50%"
-                                        value={answer3}
                                         name="correct3"
                                         labelWidth="145"
                                     >
-                                        <option>correct?</option>
+                                        <option></option>
                                         <option value={false}>Incorrect</option>
                                         <option value={true}>Correct</option>
                                     </Select>
@@ -144,13 +151,17 @@ export default class AddAnswersForm extends Component {
                                         Incorrect / Correct ?
                                     </InputLabel>
                                     <Select
+                                        native
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined-label"
                                         className="form-control"
+                                        onChange={onChange}
+                                        value={correct4}
                                         maxwidth="50%"
-                                        value={answer4}
                                         name="correct4"
                                         labelWidth="145"
                                     >
-                                        <option>correct?</option>
+                                        <option></option>
                                         <option value={false}>Incorrect</option>
                                         <option value={true}>Correct</option>
                                     </Select>
