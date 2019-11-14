@@ -9,13 +9,16 @@ import Container from "@material-ui/core/Container"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
+import InputLabel from '@material-ui/core/InputLabel'
+
 
 export default class AddAnswersForm extends Component {
+    
     render() {
         console.log(this.props.values);
-        
+
         const { onChange, onSubmit } = this.props
-        const { answer1, answer2, answer3, answer4 } = this.props.values
+        const { answer1, answer2, answer3, answer4, correct1, correct2, correct3, correct4 } = this.props.values
 
         return (
             <div className="background">
@@ -25,7 +28,7 @@ export default class AddAnswersForm extends Component {
                             <Typography variant="h4">Add Answers</Typography>
 
                             <form onSubmit={onSubmit} noValidate autoComplete="off">
-                                
+
                                 <TextField
                                     id="outlined-basic"
                                     className="form-control-lg-textfield"
@@ -37,18 +40,23 @@ export default class AddAnswersForm extends Component {
                                     name="answer1"
                                     value={answer1}
                                     variant="outlined"
-                                />
+                                /> 
 
                                 <FormControl variant="outlined" label="Answer" placeholder="Answer1">
+                                <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                        Incorrect / Correct ?
+                                    </InputLabel>
                                     <Select
                                         native
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
+                                        value={correct1}
                                         maxwidth="50%"
-                                        value="answer1"
                                         name="correct1"
                                     >
-                                        <option>correct?</option>
+                                        <option></option>
                                         <option value={false}>Incorrect</option>
                                         <option value={true}>Correct</option>
                                     </Select>
@@ -72,7 +80,7 @@ export default class AddAnswersForm extends Component {
                                         className="form-control"
                                         onChange={onChange}
                                         maxwidth="50%"
-                                        value="answer2"
+                                        value={answer2}
                                         name="correct2"
                                     >
                                         <option>correct?</option>
@@ -98,7 +106,7 @@ export default class AddAnswersForm extends Component {
                                         className="form-control"
                                         onChange={onChange}
                                         maxwidth="50%"
-                                        value="answer3"
+                                        value={answer3}
                                         name="correct3"
                                     >
                                         <option>correct?</option>
@@ -124,7 +132,7 @@ export default class AddAnswersForm extends Component {
                                         className="form-control"
                                         onChange={onChange}
                                         maxwidth="50%"
-                                        value="answer4"
+                                        value={answer4}
                                         name="correct4"
                                     >
                                         <option>correct?</option>
