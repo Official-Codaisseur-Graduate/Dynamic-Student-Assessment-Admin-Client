@@ -6,7 +6,7 @@ export const SET_ERROR = 'SET_ERROR';
 // USER LOGIN
 export const USER_LOGIN = 'USER_LOGIN';
 export const login = (email, password) => {
-    console.log("Login data sent =", email, password )
+    // console.log("Login data sent =", email, password )
 	return (dispatch) => {
 		request
 			.post(`${baseURL}/login`)
