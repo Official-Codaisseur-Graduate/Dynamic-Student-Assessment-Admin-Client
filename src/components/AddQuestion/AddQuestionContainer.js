@@ -20,12 +20,28 @@ class AddQuestionContainer extends Component {
         this.setState({
             questionContent: '',
             categoryId: 0,
-            level: 0,
+            level: 0
         })
     }
     
     onSubmitAnswer = (event) => {
-        console.log('Submitting answers! This is the state:', this.state );
+        event.preventDefault()
+        console.log("Submitting answers! This is the state:", this.state)
+        
+        let answerdata = []
+        for (let i = 1; i <= 4; i++) {
+            let answer = 'answer' + i
+            let correct = 'correct' + i
+            answerdata.push({ answer: this.state[answer], correct: this.state[correct], questionId: 1}) 
+            // console.log('answer', answerdata); 
+        }
+        this.props.addAnswers(answerdata)
+
+        this.setState({
+            questionContent: '',
+            categoryId: 0,
+            level: 0,
+        })
         
     }
 
@@ -39,18 +55,20 @@ class AddQuestionContainer extends Component {
     render() {
         return (
             <div>
+                {/* {!this.props.newQuestion.id &&
                 <AddQuestionForm
                     onSubmit={this.onSubmitQuestion}
                     onChange={this.onChange}
                     values={this.state}
                 />
-                {/* {this.props.question.id && } */}
+            }
+                {this.props.newQuestion.id && */}
                 <AddAnswerForm
-                    onSubmit={this.onSubmitQuestion}
+                    onSubmit={this.onSubmitAnswer}
                     onChange={this.onChange}
                     values={this.state}
                 />
-
+                {/* } */}
             </div>
         )
     }
@@ -58,7 +76,7 @@ class AddQuestionContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        question: state.question,
+        newQuestion: state.newQuestion,
         user: state.user
     }
 }
