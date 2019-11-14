@@ -1,32 +1,19 @@
-import request from 'superagent';
-import {baseURL} from '../../constants/baseURL';
+import request from "superagent";
+const baseUrl = "http://localhost:4000";
 
-export const SET_ERROR = 'SET_ERROR';
+export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
 
-// USER LOGIN
-export const SET_USERS = 'SET_USERS';
-export const getUsers = () => {
-	return (dispatch, getState) => {
-		const state = getState()
-		const { user } = state
-		console.log(user.jwt);
+const studentsFetched = students => ({
+  type: STUDENTS_FETCHED,
+  payload: students
+});
 
-		request
-			.get(`${baseURL}/user`)
-			.set("Authorization", `Bearer ${user.jwt}`)
-			.then(response => {
-                console.log("this is what we get back from /user", response.body)
-				dispatch({
-					type: SET_USERS,
-					payload: response.body.data
-				})
-			})
-			.catch(error => {
-				console.log('ERROR in GET USERS ---> ', error)
-				dispatch({
-					type: SET_ERROR,
-					payload: error.response
-				})	
-			})
-	}
-}
+export const loadStudents = () => (dispatch) => {
+
+  request(`${baseUrl}/interviewee`)
+    .then(response => {
+      console.log("response of loadStudents()", response)
+      dispatch(studentsFetched(response.body));
+    })
+    .catch(console.error);
+};

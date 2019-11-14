@@ -1,30 +1,27 @@
 import React, { Component } from 'react'
 import Students from './Students'
-import { connect } from 'react-redux'
-import { getUsers } from '../../actions/user/getusers'
-
-
+import { connect} from 'react-redux'
+import { loadStudents } from '../../actions/user/getusers'
 
 class StudentsContainer extends Component {
 
     componentDidMount(){
-        // this.props.getUsers()
+        this.props.loadStudents()
     }
 
     render() {
         return (
             <div>
-                <Students
-                data = {this.props.userList} />
+                <Students students={this.props.students} />
             </div>
         )
     }
 }
+
 const mapStateToProps = (state) => {
 	return {
-        userList: state.allUsers,
+        students: state.students,
 	}
 }
 
-export default connect(mapStateToProps, {getUsers})(StudentsContainer)
-
+export default connect(mapStateToProps, {loadStudents})(StudentsContainer)

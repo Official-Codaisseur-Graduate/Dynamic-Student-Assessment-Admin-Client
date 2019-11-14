@@ -1,100 +1,110 @@
-import React, { Component } from "react"
-import Container from "@material-ui/core/Container"
-import MaterialTable from "material-table"
-import { baseURL } from "../../constants/baseURL"
+import React, { Component } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
 
 export default class Students extends Component {
-	state = {
-		//   data: [
-		//   { name: 'Rein', surname: 'Op t Land', score: 17, status: 1, class: 34 },
-		//   { name: 'Wouter', surname: 'De Vos', score: 10, status: 3, class: null},
-		//   { name: 'Kelly', surname: 'Van Evert', score: 14, status: 2, class: null },
-		//   { name: 'Arien', surname: 'Kock', score: 18, status: 1, class: 34 },
-		//   { name: 'Gerson', surname: 'Lynch', score: 4, status: 3, class: null },
-		//   { name: 'Esther', surname: 'Hayward', score: 12, status: 2, class: null },
-		//   { name: 'Danny', surname: 'Van Der Jagt', score: 18, status: 1, class: 34 },
-		//   { name: 'Zeger', surname: 'Vos', score: 16, status: 1, class: 33 },
-		//   { name: 'Thomas', surname: 'De Witt', score: 11, status: 2, class: 35 },
-		// ],
-		columns: [
-			{ title: "First Name", field: "firstName", editable: "never" },
-			{ title: "Last Name", field: "lastName", editable: "never" },
-			{ title: "Username", field: "username" },
-			{ title: "Email", field: "email" },
-			{
-				title: "Status",
-				field: "status",
-				lookup: { 1: "Ready now", 2: "Needs to revise", 3: "Not ready" }
-			},
-			{ title: "Score", field: "score", type: "numeric" },
-			{ title: "Class", field: "classNumber", type: "numeric" }
-		],
-		options: {
-			sorting: true,
-			exportButton: true,
-			rowStyle: rowData => ({
-				backgroundColor:
-					this.state.selectedRow &&
-					this.state.selectedRow.tableData.id === rowData.tableData.id
-						? "#EEE"
-						: "#FFF"
-			})
+
+	columns = [
+		{ id: 'id', label: 'Id', minWidth: 140 },
+		{ id: 'email', label: 'Email Id', minWidth: 170 },
+		{ id: 'code', label: 'Code', minWidth: 100 },
+		{ id: 'status', label: 'Status', minWidth: 100 }
+	]
+
+	useStyles = makeStyles({
+		root: {
+			width: '100%',
 		},
-		editable: {
-			onRowUpdate: (newData, oldData) =>
-				new Promise((resolve, reject) => {
-					setTimeout(() => {
-						{
-							const data = this.props.data
-							const index = data.indexOf(oldData)
-							data[index] = newData
-							this.setState({ data }, () => resolve())
-						}
-						resolve()
-					}, 1000)
-				})
+		tableWrapper: {
+			maxHeight: 440,
+			overflow: 'auto',
 		},
-		selectedRow: null
-	}
+	});
 
 	render() {
-		console.log('checking userlist',this.state.data)
+		// const rows = this.props.students.rows
+		// const classes = this.useStyles
+		// const [page, setPage] = React.useState(0);
+		// const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+		// const handleChangePage = (event, newPage) => {
+		// 	setPage(newPage);
+		// };
+
+		// const handleChangeRowsPerPage = event => {
+		// 	setRowsPerPage(+event.target.value);
+		// 	setPage(0);
+		// };
+
 		return (
-			<React.Fragment>
-				<span className="spacer-lg"></span>
-				<Container>
-					<MaterialTable
-						className="spacer"
-						title="Bootcamp Candidates"
-						columns={this.state.columns}
-						// data={this.props.data}
-						options={this.state.options}
-						editable={this.state.editable}
-						onRowClick={(evt, selectedRow) => this.setState({ selectedRow })}
-						data={query =>
-							new Promise((resolve, reject) => {
-								console.log("query is", query)
-								let url = `${baseURL}/user`
-								url += "?per_page=" + query.pageSize
-								url += "&page=" + (query.page + 1)
-								console.log("url changes", url)
-								fetch(url)
-									.then(response => response.json())
-									.then(result => {
-										console.log("result of the query is", result)
-										resolve({
-											//added result.data.rows instead of result.data
-											data: result.data.rows,
-											page: result.page - 1,
-											totalCount: result.total
-										})
-									})
-							})
-						}
-					/>
-					<span className="spacer-lg"></span>
-				</Container>
-			</React.Fragment>
+			<Paper >
+				<div >
+					<Table stickyHeader aria-label="sticky table">
+						<TableHead>
+							<TableRow>
+								{this.columns.map(column => (
+									<TableCell
+										key={column.id}
+										style={{ minWidth: column.minWidth }}
+									> {column.label}
+									</TableCell>
+								))}
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{!this.props.students.rows && "Loading.."}
+							{this.props.students.rows && this.props.students.rows.map(row => {
+								return (
+									<TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+										{this.columns.map(column => {
+											const value = row[column.id]
+											return (
+												<TableCell key={column.id}>
+													{value}
+												</TableCell>
+											)
+										})}
+									</TableRow>
+								)
+							})}
+						</TableBody>
+					</Table>
+
+				</div>
+
+				{/* <TablePagination
+					rowsPerPageOptions={[10, 25, 100]}
+					component="div"
+					count={this.props.students.rows.length}
+					rowsPerPage={rowsPerPage}
+					page={page}
+					backIconButtonProps={{
+						'aria-label': 'previous page',
+					}}
+					nextIconButtonProps={{
+						'aria-label': 'next page',
+					}}
+					onChangePage={handleChangePage}
+					onChangeRowsPerPage={handleChangeRowsPerPage} >
+				</TablePagination> */}
+			</Paper>
 		)
 	}
 }
+
+
+// import React from 'react'
+
+// export default function Students() {
+// 	return (
+// 		<div>
+
+// 		</div>
+// 	)
+// }
