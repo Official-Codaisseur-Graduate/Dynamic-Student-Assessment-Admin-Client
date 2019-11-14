@@ -58,7 +58,9 @@ export default class Students extends Component {
 	}
 
 	render() {
+		console.log('props', this.props);
 		console.log('checking userlist',this.state.data)
+
 		return (
 			<React.Fragment>
 				<span className="spacer-lg"></span>
