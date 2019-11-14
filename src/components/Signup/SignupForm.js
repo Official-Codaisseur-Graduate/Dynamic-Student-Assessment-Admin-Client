@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 class SignupForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props;
-		const { username, email, password } = this.props.values;
+		const {email, password } = this.props.values;
 		return (
 
 			<div className="background">
@@ -24,16 +24,6 @@ class SignupForm extends Component {
 							</Typography>
 
 							<form noValidate autoComplete="off" onSubmit={onSubmit}>
-								<TextField
-									id="outlined-name"
-									label="Username"
-									className="form-control-lg"
-									value={username}
-									onChange={onChange}
-									name="username"
-									margin="normal"
-									variant="outlined"
-								/>
 								<TextField
 									id="outlined-name"
 									label="Email"
