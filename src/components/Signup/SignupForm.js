@@ -20,7 +20,7 @@ class SignupForm extends Component {
 					<Card className="card-50 component-center">
 						<CardContent>
 							<Typography variant="h4">
-								Sign Up
+							<div className="signup-label"><b>Sign Up</b></div>
 							</Typography>
 
 							<form noValidate autoComplete="off" onSubmit={onSubmit}>

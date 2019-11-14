@@ -19,7 +19,7 @@ class LoginForm extends Component {
 				<Card className="card-50">
 				<CardContent>
 				   <Typography variant="h4">
-				  	Login
+				  <div className="login-label"><b>Login</b></div>
 				   </Typography>
 			   <form noValidate onSubmit={onSubmit}>
 				<TextField
@@ -49,7 +49,7 @@ class LoginForm extends Component {
 					type="submit" 
 					variant="contained"
 					size="large"
-					color="secondary">Log In</Button>
+					color="secondary">Login</Button>
                 </CardActions>
 				
                  </form>

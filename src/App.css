@@ -121,3 +121,16 @@ padding:1rem
   padding: 20px !important;
   font-size: 18px !important;
 }
+
+.h1 {
+  text-align: center;
+  color: grey;
+}
+
+.login-label {
+  color: grey;
+}
+
+.signup-label {
+  color: grey;
+}
