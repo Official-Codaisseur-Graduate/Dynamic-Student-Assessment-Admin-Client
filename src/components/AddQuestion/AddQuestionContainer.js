@@ -1,52 +1,66 @@
 import React, { Component } from 'react'
 import AddQuestionForm from './AddQuestionForm'
-import {connect} from 'react-redux'
+import AddAnswerForm from './AddAnswerForm'
+import { connect } from 'react-redux'
 import { addQuestion } from '../../actions/question/question'
 import { addAnswers } from '../../actions/question/question'
 
 class AddQuestionContainer extends Component {
     state = {
         questionContent: '',
-        categoryId : 0
+        categoryId: 0,
+        level: 0
     }
 
-    onSubmit = (event) => {
+    onSubmitQuestion = (event) => {
         event.preventDefault()
-        console.log("what is the state", this.state)
+        console.log("Submitting a question! This is the state:", this.state)
         this.props.addQuestion(this.state)
 
         this.setState({
             questionContent: '',
-            categoryId: 0
-         })        
+            categoryId: 0,
+            level: 0,
+        })
     }
     
+    onSubmitAnswer = (event) => {
+        console.log('Submitting answers! This is the state:', this.state );
+        
+    }
+
     onChange = (event) => {
         event.preventDefault()
         this.setState({
-			[event.target.name]: event.target.value
-		})
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
         return (
             <div>
-                <AddQuestionForm 
-                onSubmit={this.onSubmit}
-                onChange={this.onChange}
-                values={this.state}
-                // addedquestion={this.props.addedquestion}
+                <AddQuestionForm
+                    onSubmit={this.onSubmitQuestion}
+                    onChange={this.onChange}
+                    values={this.state}
                 />
+                {/* {this.props.question.id && } */}
+                <AddAnswerForm
+                    onSubmit={this.onSubmitQuestion}
+                    onChange={this.onChange}
+                    values={this.state}
+                />
+
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-	return {
-        addedquestion: state.addedquestion,
-        user: state.user        
-	}
+    return {
+        question: state.question,
+        user: state.user
+    }
 }
 
-export default connect(mapStateToProps, {addQuestion, addAnswers})(AddQuestionContainer)
+export default connect(mapStateToProps, { addQuestion, addAnswers })(AddQuestionContainer)

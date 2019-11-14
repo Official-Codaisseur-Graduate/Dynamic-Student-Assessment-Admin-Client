@@ -10,13 +10,13 @@ export const addQuestion = (data) => {
 		const { user } = state
 		// console.log(user.jwt);
 		
-		// console.log('RETURN', data)
-		const { questionContent, categoryId } = data
+		console.log('RETURN', data)
+		const { questionContent, categoryId, level} = data
 		// console.log('SENDING THIS TO BACKEND', questionContent, categoryId)
 		request
 			.post(`${baseURL}/question`)
 			.set("Authorization", `Bearer ${user.jwt}`)
-            .send({questionContent, categoryId})
+            .send({questionContent, categoryId, level})
             .then(response => {
 				dispatch({
 					type: ADDED_QUESTION,

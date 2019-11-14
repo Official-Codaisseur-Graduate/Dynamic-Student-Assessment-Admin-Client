@@ -23,19 +23,7 @@ export default class AddQuestionForm extends Component {
 							<Typography variant="h4">Add a question</Typography>
 
 							<form onSubmit={onSubmit} noValidate autoComplete="off">
-								<TextField
-									id="outlined"
-									label="Question"
-									className="form-control-lg-textfield"
-									multiline
-									rows="4"
-									onChange={onChange}
-									margin="normal"
-									variant="outlined"
-									name="questionContent"
-									value={questionContent}
-								/>
-								<Typography variant="subtitle1">Category </Typography>
+								{/* <Typography variant="subtitle1">Category </Typography> */}
 								<FormControl
 									variant="outlined"
 									label="Category"
@@ -77,6 +65,18 @@ export default class AddQuestionForm extends Component {
 										</MenuItem>
 									</Select>
 								</FormControl>
+								<TextField
+									id="outlined"
+									label="Question"
+									className="form-control-lg-textfield"
+									multiline
+									rows="4"
+									onChange={onChange}
+									margin="normal"
+									variant="outlined"
+									name="questionContent"
+									value={questionContent}
+								/>
 								<CardActions>
 									<Button type="submit" size="large">
 										Add Question
