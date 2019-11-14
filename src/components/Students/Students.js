@@ -59,7 +59,8 @@ export default class Students extends Component {
 
 	render() {
 		console.log('props', this.props);
-		
+		console.log('checking userlist',this.state.data)
+
 		return (
 			<React.Fragment>
 				<span className="spacer-lg"></span>
@@ -84,7 +85,8 @@ export default class Students extends Component {
 									.then(result => {
 										console.log("result of the query is", result)
 										resolve({
-											data: result.data,
+											//added result.data.rows instead of result.data
+											data: result.data.rows,
 											page: result.page - 1,
 											totalCount: result.total
 										})
