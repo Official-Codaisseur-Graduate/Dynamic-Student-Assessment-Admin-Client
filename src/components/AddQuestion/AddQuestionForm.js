@@ -9,13 +9,16 @@ import Container from "@material-ui/core/Container"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
+import InputLabel from '@material-ui/core/InputLabel'
 
 
 
 export default class AddQuestionForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props
-		const { questionContent, categoryId } = this.props.values
+		const { questionContent, categoryId, level, categories } = this.props.values
+
+		// console.log(this.props.categories);
 
 		return (
 			<div className="background">
@@ -23,54 +26,62 @@ export default class AddQuestionForm extends Component {
 					<Card className="card-50 component-center">
 						<CardContent>
 							<Typography variant="h4"><b>Add a question</b></Typography>
-							<br/>
-							<form 
-							onSubmit={onSubmit} 
-							noValidate 
-							autoComplete="off">
-								{/* <Typography variant="subtitle1">Category </Typography> */}
+							<br />
+							<form
+								onSubmit={onSubmit}
+								noValidate
+								autoComplete="off">
 								<FormControl
-								    style={{minWidth: 100}}
 									variant="outlined"
-									label="Category"
-									placeholder="Category"
-								>
+									label="Categories"
+									placeholder="Categories">
+									<InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+										Categories
+                                    </InputLabel>
 									<Select
+										native
+										labelId="demo-simple-select-outlined-label"
+										id="demo-simple-select-outlined-label"
 										className="form-control"
 										onChange={onChange}
-										value={categoryId}
+										value={categories}
+										maxwidth="50%"
 										name="categoryId"
+										labelWidth="145"
 									>
-										<MenuItem value={0} key="Pick a category">
-											{" "}
-											Pick a category{" "}
-										</MenuItem>
-										<MenuItem value={1} key="Variables">
-											{" "}
-											Variables{" "}
-										</MenuItem>
-										<MenuItem value={2} key="Functions">
-											{" "}
-											Functions{" "}
-										</MenuItem>
-										<MenuItem value={3} key="Global">
-											{" "}
-											Global{" "}
-										</MenuItem>
-										<MenuItem value={4} key="Local">
-											{" "}
-											Local{" "}
-										</MenuItem>
-										<MenuItem value={5} key="Type Coercion">
-											{" "}
-											Type Coercion{" "}
-										</MenuItem>
-										<MenuItem value={6} key="Statements">
-											{" "}
-											Statements{" "}
-										</MenuItem>
+										<option></option>
+										{this.props.categories.map((categories) => {
+											return <option key={categories.id} value={categories.id}>{categories.topic}</option>
+										})}
 									</Select>
 								</FormControl>
+
+								<br /> <br />
+								<FormControl
+									variant="outlined"
+									label="Level"
+									placeholder="Level">
+									<InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+										Difficulty level
+                                    </InputLabel>
+									<Select
+										native
+										labelId="demo-simple-select-outlined-label"
+										id="demo-simple-select-outlined-label"
+										className="form-control"
+										onChange={onChange}
+										value={level}
+										maxwidth="50%"
+										name="level"
+										labelWidth="145"
+									>
+										<option></option>
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</Select>
+								</FormControl>
+
 								<TextField
 									id="outlined"
 									label="Question"
@@ -83,9 +94,9 @@ export default class AddQuestionForm extends Component {
 									name="questionContent"
 									value={questionContent}
 								/>
-								<CardActions style={{justifyContent: 'center'}}>
-								<Button type="submit" variant="contained" color="secondary">
-								Add question
+								<CardActions style={{ justifyContent: 'center' }}>
+									<Button type="submit" variant="contained" color="secondary">
+										Add question
 							  </Button>
 								</CardActions>
 							</form>
