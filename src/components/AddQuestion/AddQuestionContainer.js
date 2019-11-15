@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import AddQuestionForm from './AddQuestionForm'
 import AddAnswerForm from './AddAnswerForm'
 import { connect } from 'react-redux'
-import { addQuestion } from '../../actions/question/question'
-import { addAnswers } from '../../actions/question/question'
+import { addQuestion, addAnswers } from '../../actions/question/question'
+// import { addAnswers } from '../../actions/question/question'
+import { loadCategories } from '../../actions/categories'
+
 
 class AddQuestionContainer extends Component {
     state = {
         questionContent: ''
+    }
+
+    componentDidMount () {
+        this.props.loadCategories()
     }
 
     onSubmitQuestion = (event) => {
@@ -60,6 +66,7 @@ class AddQuestionContainer extends Component {
                         onSubmit={this.onSubmitQuestion}
                         onChange={this.onChange}
                         values={this.state}
+                        categories={this.props.categories}
                     />
                 }
                 {this.props.newQuestion.id &&
@@ -77,8 +84,9 @@ class AddQuestionContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         newQuestion: state.newQuestion,
-        user: state.user
+        user: state.user,
+        categories: state.categories
     }
 }
 
-export default connect(mapStateToProps, { addQuestion, addAnswers })(AddQuestionContainer)
+export default connect(mapStateToProps, { addQuestion, addAnswers, loadCategories })(AddQuestionContainer)
