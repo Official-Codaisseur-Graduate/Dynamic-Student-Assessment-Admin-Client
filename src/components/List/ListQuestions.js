@@ -14,6 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText"
 import Typography from "@material-ui/core/Typography"
 import CloseTwoToneIcon from "@material-ui/icons/CloseTwoTone"
 import CheckTwoToneIcon from "@material-ui/icons/CheckTwoTone"
+import Button from "@material-ui/core/Button"
 
 class ListQuestions extends Component {
 	render() {
@@ -45,6 +46,8 @@ class ListQuestions extends Component {
 											<Typography variant="h5" className="question">
 												{question.questionContent}
 											</Typography>
+											<div>
+											</div>
 										</Grid>
 										<Grid item xs={12}>
 											<Typography>Answers</Typography>
@@ -97,6 +100,38 @@ class ListQuestions extends Component {
 												{question.category.topic}
 											</Typography>
 										</Grid>
+										<Grid item xs={6}>
+											<Typography variant="h5" gutterBottom>
+												Edit Question
+											</Typography>
+											
+											<Typography gutterBottom>
+												<Button type="submit"
+													size="medium"
+													color="secondary"
+													variant="contained"
+													// onClick={}
+												>
+													Edit
+											</Button>
+											</Typography>
+										</Grid>
+										<Grid item xs={6}>
+											<Typography variant="h5" gutterBottom>
+												Delete Question
+											</Typography>
+											
+											<Typography gutterBottom>
+												<Button type="submit"
+													size="medium"
+													color="secondary"
+													variant="contained"
+													onClick={() => this.props.onClick(question.id)}
+												>
+													Delete
+											</Button>
+											</Typography>
+										</Grid>
 									</Grid>
 								</ExpansionPanelDetails>
 							</ExpansionPanel>
@@ -110,3 +145,5 @@ class ListQuestions extends Component {
 }
 
 export default ListQuestions
+
+

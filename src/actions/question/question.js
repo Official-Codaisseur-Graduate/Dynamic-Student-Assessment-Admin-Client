@@ -40,3 +40,22 @@ export const addAnswers = (answers) => {
 			})
 	}
 }
+
+
+/// delete question, working in the backend (auth added after frontend working)
+/// frontend - in progress, add auth here after added in the backend
+export const DELETE_QUESTION_SUCCESS = 'DELETE_QUESTION_SUCCESS'
+
+const deleteQuestionSuccess = questionId => ({
+	type: DELETE_QUESTION_SUCCESS,
+	payload: questionId
+  });
+  
+  export const deleteQuestion = (id) => (dispatch, getState) => {
+	request
+	.delete(`${baseURL}/question/{id}`)
+	.then(response => {
+	dispatch(deleteQuestionSuccess(id));
+	  });
+  };
+  
