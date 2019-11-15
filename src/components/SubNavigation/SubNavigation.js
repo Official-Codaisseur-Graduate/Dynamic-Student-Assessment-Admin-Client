@@ -1,5 +1,5 @@
 
-import React, { Component } from "react"
+import React from "react"
 // import Link from '@material-ui/core/Link';
 import { Link } from "react-router-dom"
 import AppBar from "@material-ui/core/AppBar"

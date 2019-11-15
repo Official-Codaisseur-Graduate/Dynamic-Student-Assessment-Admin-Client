@@ -29,7 +29,7 @@ export default function CodeForm(props) {
                     value={props.values.intervieweeId}
                     onChange={props.onChange}
                 />
-                <Button variant="contained" color="secondary" type="submit" className={classes.button}>GenerateCode</Button>
+                <Button variant="contained" color="secondary" type="submit" className={classes.button}>Generate Code</Button>
             </form>
             <h2 style={{textAlign: "center"}}>{props.code}</h2>
         </div>

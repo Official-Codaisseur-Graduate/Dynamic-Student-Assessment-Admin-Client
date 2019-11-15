@@ -6,7 +6,6 @@ import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
 import Container from "@material-ui/core/Container"
-import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import InputLabel from '@material-ui/core/InputLabel'
@@ -16,7 +15,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 export default class AddQuestionForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props
-		const { questionContent, categoryId, level, categories } = this.props.values
+		const { questionContent, level, categories } = this.props.values
 
 		// console.log(this.props.categories);
 

@@ -1,9 +1,5 @@
-
-
-import { Route, Redirect } from "react-router-dom"
-
+import { Route } from "react-router-dom"
 import React, { Component } from 'react'
-
 
 //Stylesheets
 import "./App.css"
@@ -22,7 +18,7 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
-    console.log('logged in?', this.props.loggedIn);
+    // console.log('logged in?', this.props.loggedIn);
 
     return (
 

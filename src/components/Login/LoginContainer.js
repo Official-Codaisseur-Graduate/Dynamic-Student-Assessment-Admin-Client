@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { login } from '../../actions/user/login'
 import LoginForm from './LoginForm'
-import { Redirect } from 'react-router-dom'
 
 class LoginContainer extends Component {
 	state = {
