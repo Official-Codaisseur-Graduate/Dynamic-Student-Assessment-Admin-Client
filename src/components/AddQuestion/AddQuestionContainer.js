@@ -7,9 +7,7 @@ import { addAnswers } from '../../actions/question/question'
 
 class AddQuestionContainer extends Component {
     state = {
-        questionContent: '',
-        categoryId: 0,
-        level: 0
+        questionContent: ''
     }
 
     onSubmitQuestion = (event) => {
@@ -50,9 +48,11 @@ class AddQuestionContainer extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+        
     }
-
+    
     render() {
+        console.log(this.state);
         return (
             <div>
                 {!this.props.newQuestion.id &&

@@ -9,13 +9,14 @@ import Container from "@material-ui/core/Container"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
+import InputLabel from '@material-ui/core/InputLabel'
 
 
 
 export default class AddQuestionForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props
-		const { questionContent, categoryId } = this.props.values
+		const { questionContent, categoryId, level } = this.props.values
 
 		return (
 			<div className="background">
@@ -71,6 +72,32 @@ export default class AddQuestionForm extends Component {
 										</MenuItem>
 									</Select>
 								</FormControl>
+<br /> <br />
+								<FormControl
+                                    variant="outlined"
+                                    label="Level"
+                                    placeholder="Level">
+                                    <InputLabel htmlFor="outlined-age-native-simple" id="demo-simple-select-outlined-label">
+                                        Difficulty level
+                                    </InputLabel>
+                                    <Select
+                                        native
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined-label"
+                                        className="form-control"
+                                        onChange={onChange}
+                                        value={level}
+                                        maxwidth="50%"
+                                        name="level"
+                                        labelWidth="145"
+                                    >
+                                        <option></option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+										<option value="2">2</option>
+                                     </Select>
+                                </FormControl>
+
 								<TextField
 									id="outlined"
 									label="Question"
