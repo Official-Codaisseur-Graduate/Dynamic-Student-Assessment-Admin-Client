@@ -46,8 +46,6 @@ export default class Students extends Component {
 	}
 
 	render() {
-		// console.log("props??", this.props)
-
 		return (
 		<div>
 			<Paper className={this.classes.root}>

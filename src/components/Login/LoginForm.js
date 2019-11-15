@@ -19,7 +19,7 @@ class LoginForm extends Component {
 				<Card className="card-50">
 				<CardContent>
 				   <Typography variant="h4">
-				   Sign In
+				  <div className="login-label"><b>Login</b></div>
 				   </Typography>
 			   <form noValidate onSubmit={onSubmit}>
 				<TextField
@@ -44,15 +44,19 @@ class LoginForm extends Component {
                 variant="outlined"
                  />
 
-				<CardActions>
-                    <Button type="submit" size="large">Log In</Button>
+				 <CardActions style={{justifyContent: 'center'}}>
+					<Button 
+					type="submit" 
+					variant="contained"
+					size="large"
+					color="secondary">Login</Button>
                 </CardActions>
 				
                  </form>
                 </CardContent>
                 
                 </Card>
-				<p className="text-center">Don't have an account yet? <Link to="/signup">Sign up</Link></p>
+				<p className="text-center"><i>Don't have an account yet? </i><Link to="/signup">Sign up</Link></p>
                 </Container>
 				</div>
 		)

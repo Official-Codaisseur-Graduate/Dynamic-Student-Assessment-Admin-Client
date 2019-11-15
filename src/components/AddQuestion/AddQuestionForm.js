@@ -10,6 +10,8 @@ import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 
+
+
 export default class AddQuestionForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props
@@ -20,23 +22,15 @@ export default class AddQuestionForm extends Component {
 				<Container>
 					<Card className="card-50 component-center">
 						<CardContent>
-							<Typography variant="h4">Add a question</Typography>
-
-							<form onSubmit={onSubmit} noValidate autoComplete="off">
-								<TextField
-									id="outlined"
-									label="Question"
-									className="form-control-lg-textfield"
-									multiline
-									rows="4"
-									onChange={onChange}
-									margin="normal"
-									variant="outlined"
-									name="questionContent"
-									value={questionContent}
-								/>
-								<Typography variant="subtitle1">Category </Typography>
+							<Typography variant="h4"><b>Add a question</b></Typography>
+							<br/>
+							<form 
+							onSubmit={onSubmit} 
+							noValidate 
+							autoComplete="off">
+								{/* <Typography variant="subtitle1">Category </Typography> */}
 								<FormControl
+								    style={{minWidth: 100}}
 									variant="outlined"
 									label="Category"
 									placeholder="Category"
@@ -47,9 +41,9 @@ export default class AddQuestionForm extends Component {
 										value={categoryId}
 										name="categoryId"
 									>
-										<MenuItem value={0} key="Please pick a category">
+										<MenuItem value={0} key="Pick a category">
 											{" "}
-											Please pick a category{" "}
+											Pick a category{" "}
 										</MenuItem>
 										<MenuItem value={1} key="Variables">
 											{" "}
@@ -77,10 +71,22 @@ export default class AddQuestionForm extends Component {
 										</MenuItem>
 									</Select>
 								</FormControl>
-								<CardActions>
-									<Button type="submit" size="large">
-										Add Question
-									</Button>
+								<TextField
+									id="outlined"
+									label="Question"
+									className="form-control-lg-textfield"
+									multiline
+									rows="4"
+									onChange={onChange}
+									margin="normal"
+									variant="outlined"
+									name="questionContent"
+									value={questionContent}
+								/>
+								<CardActions style={{justifyContent: 'center'}}>
+								<Button type="submit" variant="contained" color="secondary">
+								Add question
+							  </Button>
 								</CardActions>
 							</form>
 						</CardContent>

@@ -1,37 +1,19 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import Container from "@material-ui/core/Container"
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import Card from "@material-ui/core/Card"
 
-import { removeUnderline } from "../../constants/style"
 
 export default class Homepage extends Component {
 	render() {
 		return (
 			<div className="background">
-				<Container>
-					<Card className="card-50">
-						<CardContent>
-							<Typography variant="h5">
-								Please Sign Up or Log In to continue
-							</Typography>
-						</CardContent>
-						<CardActions>
-							<Link to="/login" style={removeUnderline}>
-								{" "}
-								<Button size="large">Log In</Button>
-							</Link>
-							<Link to="/signup" style={removeUnderline}>
-								{" "}
-								<Button size="large">Sign Up</Button>
-							</Link>
-						</CardActions>
-					</Card>
-				</Container>
+			<div className="h1"><h1><p>ADMIN ASSESSMENT</p></h1></div>
+			<p><i>The admin panel of the Student Assessment Web-app will be used by teachers and other Codaisseur's staff. It is meant to provide functionalities like: </i></p>
+			<div className="backgroundlist">
+			<ul>
+			<li>Possibility to add, remove and modify questions & answers</li>
+			<li>Overview of the existing questions and answers and how well they are being answered</li>
+			<li>Overview of the applicants who undertook the test</li>
+			</ul>
+			</div>
 			</div>
 		)
 	}
