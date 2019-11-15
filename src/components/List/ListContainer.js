@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ListQuestions from './ListQuestions'
 import { questions } from '../../actions/question'
+import { deleteQuestion } from '../../actions/question/question'
 import { Typography } from '@material-ui/core'
+
+
 
 
  class ListContainer extends Component {
@@ -10,6 +13,10 @@ import { Typography } from '@material-ui/core'
     componentDidMount(){
       this.props.questions();
     }
+
+    onClick = (questionId) => {
+        this.props.deleteQuestion(questionId)
+      }
 
     render() {
         if(this.props.questionList === 0){
@@ -20,6 +27,7 @@ import { Typography } from '@material-ui/core'
             <div>
                 <ListQuestions 
                 questions={this.props.questionList}
+                onClick={this.onClick}
                 />
             </div>
         )
@@ -31,4 +39,6 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {questions})(ListContainer)
+const mapDispatchToProps = {questions, deleteQuestion}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListContainer)
