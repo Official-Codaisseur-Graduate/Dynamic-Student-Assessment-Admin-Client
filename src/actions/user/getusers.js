@@ -12,7 +12,7 @@ export const loadStudents = () => (dispatch) => {
 
   request(`${baseUrl}/interviewee`)
     .then(response => {
-      console.log("response of loadStudents()", response)
+      // console.log("response of loadStudents()", response)
       dispatch(studentsFetched(response.body));
     })
     .catch(console.error);

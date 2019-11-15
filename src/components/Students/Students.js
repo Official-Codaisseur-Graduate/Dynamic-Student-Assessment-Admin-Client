@@ -10,6 +10,11 @@ import TableRow from '@material-ui/core/TableRow';
 
 export default class Students extends Component {
 
+	state = {
+		page: 0,
+		rowsPerPage: 5
+	}
+
 	columns = [
 		{ id: 'id', label: 'Id', minWidth: 140 },
 		{ id: 'email', label: 'Email Id', minWidth: 170 },
@@ -17,7 +22,7 @@ export default class Students extends Component {
 		{ id: 'status', label: 'Status', minWidth: 100 }
 	]
 
-	useStyles = makeStyles({
+	classes = makeStyles({
 		root: {
 			width: '100%',
 		},
@@ -25,86 +30,79 @@ export default class Students extends Component {
 			maxHeight: 440,
 			overflow: 'auto',
 		},
-	});
+	})
+
+	handleChangePage = (event, newPage) => {
+		this.setState({
+			page: newPage
+		})
+	}
+
+	handleChangeRowsPerPage = (event) => {
+		this.setState({
+			rowsPerPage: +event.target.value,
+			page: 0
+		})
+	}
 
 	render() {
-		// const rows = this.props.students.rows
-		// const classes = this.useStyles
-		// const [page, setPage] = React.useState(0);
-		// const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-		// const handleChangePage = (event, newPage) => {
-		// 	setPage(newPage);
-		// };
-
-		// const handleChangeRowsPerPage = event => {
-		// 	setRowsPerPage(+event.target.value);
-		// 	setPage(0);
-		// };
+		// console.log("props??", this.props)
 
 		return (
-			<Paper >
-				<div >
+		<div>
+			<Paper className={this.classes.root}>
+				<div className={this.classes.tableWrapper}>
 					<Table stickyHeader aria-label="sticky table">
 						<TableHead>
-							<TableRow>
-								{this.columns.map(column => (
+							<TableRow>{
+									this.columns.map(column => (
 									<TableCell
 										key={column.id}
 										style={{ minWidth: column.minWidth }}
-									> {column.label}
-									</TableCell>
-								))}
-							</TableRow>
+									>{
+										column.label
+										}</TableCell>
+								))
+								}</TableRow>
 						</TableHead>
-						<TableBody>
-							{!this.props.students.rows && "Loading.."}
-							{this.props.students.rows && this.props.students.rows.map(row => {
+						<TableBody>{
+								!this.props.students.rows ? "Loading..." : (
+								this.props.students.rows.slice(this.state.page*this.state.rowsPerPage, this.state.page*this.state.rowsPerPage + this.state.rowsPerPage).map(row => {
 								return (
-									<TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-										{this.columns.map(column => {
-											const value = row[column.id]
+									<TableRow hover role="checkbox" tabIndex={-1} key={row.code}>{
+										this.columns.map(column => {
+											const value = row[column.id];
 											return (
-												<TableCell key={column.id}>
-													{value}
-												</TableCell>
+												<TableCell key={column.id}>{value}</TableCell>
 											)
-										})}
-									</TableRow>
+										})
+									}</TableRow>
 								)
-							})}
-						</TableBody>
+							}))
+							}</TableBody>
 					</Table>
 
 				</div>
 
-				{/* <TablePagination
-					rowsPerPageOptions={[10, 25, 100]}
+				<TablePagination
+					rowsPerPageOptions={[5, 10, 25, 100]}
 					component="div"
-					count={this.props.students.rows.length}
-					rowsPerPage={rowsPerPage}
-					page={page}
+					count={parseInt(this.props.students.total)}
+					rowsPerPage={this.state.rowsPerPage}
+					page={this.state.page}
 					backIconButtonProps={{
 						'aria-label': 'previous page',
 					}}
 					nextIconButtonProps={{
 						'aria-label': 'next page',
 					}}
-					onChangePage={handleChangePage}
-					onChangeRowsPerPage={handleChangeRowsPerPage} >
-				</TablePagination> */}
+					onChangePage={this.handleChangePage}
+					onChangeRowsPerPage={this.handleChangeRowsPerPage} >
+				</TablePagination>
 			</Paper>
+		</div>
 		)
 	}
 }
 
 
-// import React from 'react'
-
-// export default function Students() {
-// 	return (
-// 		<div>
-
-// 		</div>
-// 	)
-// }
