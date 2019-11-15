@@ -27,7 +27,7 @@ class ListQuestions extends Component {
 						<Typography variant="h3">Loading...</Typography>
 					)}
 					{questions.map(question => (
-						<span>
+						<span key={question.id}>
 							<ExpansionPanel>
 								<ExpansionPanelSummary
 									expandIcon={<ExpandMoreIcon />}

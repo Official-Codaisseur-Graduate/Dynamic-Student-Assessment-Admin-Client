@@ -17,9 +17,7 @@ export default class Students extends Component {
 
 	columns = [
 		{ id: 'id', label: 'Id', minWidth: 140 },
-		{ id: 'email', label: 'Email Id', minWidth: 170 },
-		{ id: 'code', label: 'Code', minWidth: 100 },
-		{ id: 'status', label: 'Status', minWidth: 100 }
+		{ id: 'email', label: 'Email Id', minWidth: 170 }
 	]
 
 	classes = makeStyles({
@@ -67,7 +65,7 @@ export default class Students extends Component {
 								!this.props.students.rows ? "Loading..." : (
 								this.props.students.rows.slice(this.state.page*this.state.rowsPerPage, this.state.page*this.state.rowsPerPage + this.state.rowsPerPage).map(row => {
 								return (
-									<TableRow hover role="checkbox" tabIndex={-1} key={row.code}>{
+									<TableRow hover role="checkbox" tabIndex={-1} key={row.id}>{
 										this.columns.map(column => {
 											const value = row[column.id];
 											return (
