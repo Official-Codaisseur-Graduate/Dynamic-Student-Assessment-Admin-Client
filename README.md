@@ -10,12 +10,10 @@ The admin panel of the Student Assessment Web-app will be used by teachers and o
 
 ### Contributors
 
-class 30:
+Class 30:
 
 - [Gerson Lynch](https://www.github.com/gersly)
 - [Andrea Cogo](https://www.github.com/anderara)
-
-class 31:
 
 Class 31: 
 - **[KumKum Singh](https://github.com/kumkumsingh)**
