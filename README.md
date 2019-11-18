@@ -80,8 +80,8 @@ Admin users are able to login. If the request to the server is handled successfu
 - Adjust the view of the table ( 5, 10 or 20 rows in view )
 - Pagination is working
 -  **GENERATE CODE**
-        - At the /students endpoint, you can generate a code by adding the id of the interviewee, 
-        that can later be used to login to the TEST CLIENT (the site where interviewees will take the test)
+        - At the /students endpoint, you can generate a code by adding the id of the interviewee (= students id) which is             listed together with the email in the students list that can later be used to login to the TEST CLIENT 
+        (the site where interviewees will take the test)
 
         - Render a table of entries that are both sortable, exportable and filterable
         - Ability to update data in the table is possible ( ONLY in local state atm).
