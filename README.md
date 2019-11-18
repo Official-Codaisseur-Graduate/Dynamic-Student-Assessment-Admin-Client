@@ -76,18 +76,20 @@ Admin users are able to login. If the request to the server is handled successfu
 
 **Students**: List of all students (named interviewees in a table) registered for the test or possible candidates
         *This is done by making a GET request to the database on the `/interviewee` router.*
-- List of students (aka interviewees) with an email and a id
+- List of students (aka interviewees) with an email and their id
 - Adjust the view of the table ( 5, 10 or 20 rows in view )
 - Pagination is working
 -  **GENERATE CODE**
         - At the /students endpoint, you can generate a code by adding the id of the interviewee (= students id) which is             listed together with the email in the students list that can later be used to login to the TEST CLIENT 
         (the site where interviewees will take the test)
-
+ - **TABLE used for listing all the students(aka interviewees)**
+       - Refer to https://material-ui.com/components/tables/ document. A "Fixed Header" table is used here for listing all the students.
 ### To do: 
 
 **Questions**
-- Fix so that the edit button is working (action, reducer) also add a put req in backend
-- Percentage of students that answered correctly is only hard-coded at the moment. 
+- Fix so that the edit button is working (action, reducer). put request is already added in the backend.
+- Percentage of students that answered correctly is only hard-coded at the moment.
+- After generating code for an interviewee on Admin-client, we use that code to login on Test-client side, but that is not authenticated.Fix it.
 
 **Students**
 - Implement score?
