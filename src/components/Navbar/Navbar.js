@@ -1,12 +1,9 @@
 
 import React, { Component } from "react"
 import SubNavigation from "../SubNavigation/SubNavigation"
-// import Link from '@material-ui/core/Link';
 import { Link } from "react-router-dom"
 import { connect } from "react-redux";
 import logo from "../../images/codaisseur-logo-long.png"
-
-
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import { removeUnderline } from "../../constants/style"
@@ -18,22 +15,22 @@ class Navbar extends Component {
 				<AppBar variant="fixed" className="bg-white" position="static">
 					<Toolbar>
 						<Link to="/">
-						<img
-						className='logo'
-						height='80px'
-						align="middle"
-						alt='app logo'
-						src={logo}>
-						</img>
+							<img
+								className='logo'
+								height='80px'
+								align="middle"
+								alt='app logo'
+								src={logo}>
+							</img>
 						</Link>
 
 						{!this.props.loggedIn ? (
 							<p className="text-dark text-bold-spaced nav-link pt-1">
-							<Link to="/signup" color="inherit" style={removeUnderline}> Sign Up </Link> 
-							| 
+								<Link to="/signup" color="inherit" style={removeUnderline}> Sign Up </Link>
+								|
 							<Link to="/login" style={removeUnderline}> Login </Link>
 							</p>
-						 ) : (
+						) : (
 								<Link to="/logout" style={removeUnderline}>
 									<p className="text-dark text-bold-spaced nav-link pt-1">Log Out</p>
 								</Link>
@@ -42,7 +39,7 @@ class Navbar extends Component {
 
 					</Toolbar>
 				</AppBar>
-						 {this.props.loggedIn ? (<SubNavigation show={true} />) : ( <SubNavigation show={false} />) }	
+				{this.props.loggedIn ? (<SubNavigation show={true} />) : (<SubNavigation show={false} />)}
 			</div>
 		)
 	}
@@ -52,11 +49,7 @@ class Navbar extends Component {
 const mapStateToProps = state => {
 	return {
 		loggedIn: state.user.jwt !== null
-	};
-};
+	}
+}
 
 export default connect(mapStateToProps)(Navbar);
-
-// <img src="/icon.png" alt="icon" width="50px" />
-// 							{/* <img className="logo pt-1" src='https://i1.wp.com/thenextwomen.com/summit/wp-content/uploads/2017/03/codaisseur-logo-long-2e9b7b7b839a33128016eb77b49ff2bb6397b6b3552523ee09273d6a5b427861.png?resize=1200%2C279&ssl=1' alt="codaisseur logo" width="260"/> */}
-// 						</Link>

@@ -1,5 +1,5 @@
-import { Route } from "react-router-dom"
 import React, { Component } from 'react'
+import { Route } from "react-router-dom"
 
 //Stylesheets
 import "./App.css"
@@ -17,19 +17,17 @@ import Homepage from './components/Homepage/Homepage';
 import { connect } from 'react-redux';
 
 class App extends Component {
+
   render() {
-    // console.log('logged in?', this.props.loggedIn);
-
     return (
-
       <div className="App">
-
         <div>
           <NavbarContainer />
           <Route exact path="/signup" component={SignupContainer} />
           <Route exact path="/login" component={LoginContainer} />
           <Route exact path="/logout" component={LogoutContainer} />
         </div>
+
         {!this.props.loggedIn ? (
           <Route path="/" exact component={Homepage} />
         ) : (

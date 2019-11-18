@@ -19,7 +19,7 @@ export default function CodeForm(props) {
     const classes = useStyles();
     return (
         <div>
-            <form style={{justifyContent: 'center'}} className={classes.root} noValidate autoComplete="off" onSubmit={props.onSubmit}>
+            <form style={{ justifyContent: 'center' }} className={classes.root} noValidate autoComplete="off" onSubmit={props.onSubmit}>
                 <TextField
                     id="outlined-secondary"
                     label="Interviewee Id"
@@ -31,7 +31,7 @@ export default function CodeForm(props) {
                 />
                 <Button variant="contained" color="secondary" type="submit" className={classes.button}>Generate Code</Button>
             </form>
-            <h2 style={{textAlign: "center"}}>{props.code}</h2>
+            <h2 style={{ textAlign: "center" }}>{props.code}</h2>
         </div>
     )
 }

@@ -17,8 +17,9 @@ import CheckTwoToneIcon from "@material-ui/icons/CheckTwoTone"
 import Button from "@material-ui/core/Button"
 
 class ListQuestions extends Component {
+	
 	render() {
-		console.log("the questions are", this.props.questions)
+
 		const questions = this.props.questions
 		return (
 			<div>
@@ -104,13 +105,13 @@ class ListQuestions extends Component {
 											<Typography variant="h5" gutterBottom>
 												Edit Question
 											</Typography>
-											
+
 											<Typography gutterBottom>
 												<Button type="submit"
 													size="medium"
 													color="secondary"
 													variant="contained"
-													// onClick={}
+												// onClick={}
 												>
 													Edit
 											</Button>
@@ -120,7 +121,7 @@ class ListQuestions extends Component {
 											<Typography variant="h5" gutterBottom>
 												Delete Question
 											</Typography>
-											
+
 											<Typography gutterBottom>
 												<Button type="submit"
 													size="medium"

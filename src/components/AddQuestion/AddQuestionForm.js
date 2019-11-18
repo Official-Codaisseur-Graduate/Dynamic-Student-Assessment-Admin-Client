@@ -10,14 +10,10 @@ import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import InputLabel from '@material-ui/core/InputLabel'
 
-
-
 export default class AddQuestionForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props
 		const { questionContent, level, categories } = this.props.values
-
-		// console.log(this.props.categories);
 
 		return (
 			<div className="background">
@@ -39,14 +35,13 @@ export default class AddQuestionForm extends Component {
                                     </InputLabel>
 									<Select
 										native
-										labelId="demo-simple-select-outlined-label"
 										id="demo-simple-select-outlined-label"
 										className="form-control"
 										onChange={onChange}
 										value={categories}
 										maxwidth="50%"
 										name="categoryId"
-										labelWidth="145"
+										labelWidth={145}
 									>
 										<option></option>
 										{this.props.categories.map((categories) => {
@@ -65,14 +60,13 @@ export default class AddQuestionForm extends Component {
                                     </InputLabel>
 									<Select
 										native
-										labelId="demo-simple-select-outlined-label"
 										id="demo-simple-select-outlined-label"
 										className="form-control"
 										onChange={onChange}
 										value={level}
 										maxwidth="50%"
 										name="level"
-										labelWidth="145"
+										labelWidth={145}
 									>
 										<option></option>
 										<option value="0">0</option>

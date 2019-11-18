@@ -5,7 +5,7 @@ export default class NavbarContainer extends Component {
     render() {
         return (
             <div>
-             <Navbar />
+                <Navbar />
             </div>
         )
     }
