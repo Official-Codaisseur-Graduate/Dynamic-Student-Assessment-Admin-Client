@@ -3,9 +3,7 @@ import AddQuestionForm from './AddQuestionForm'
 import AddAnswerForm from './AddAnswerForm'
 import { connect } from 'react-redux'
 import { addQuestion, addAnswers } from '../../actions/question/question'
-// import { addAnswers } from '../../actions/question/question'
 import { loadCategories } from '../../actions/categories'
-
 
 class AddQuestionContainer extends Component {
     state = {
@@ -18,7 +16,6 @@ class AddQuestionContainer extends Component {
 
     onSubmitQuestion = (event) => {
         event.preventDefault()
-        console.log("Submitting a question! This is the state:", this.state)
         this.props.addQuestion(this.state)
 
         this.setState({
@@ -30,7 +27,7 @@ class AddQuestionContainer extends Component {
 
     onSubmitAnswer = (event) => {
         event.preventDefault()
-        console.log("New question id:", this.props.newQuestion.id)
+        // console.log("New question id:", this.props.newQuestion.id)
 
         let answerdata = []
         for (let i = 1; i <= 4; i++) {
@@ -58,7 +55,6 @@ class AddQuestionContainer extends Component {
     }
     
     render() {
-        console.log(this.state);
         return (
             <div>
                 {!this.props.newQuestion.id &&

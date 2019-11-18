@@ -1,4 +1,4 @@
-import {STUDENTS_FETCHED} from '../actions/user/getusers'
+import {STUDENTS_FETCHED} from '../actions/user/students'
 
 const reducer = (state={}, action={}) => {
     switch(action.type){

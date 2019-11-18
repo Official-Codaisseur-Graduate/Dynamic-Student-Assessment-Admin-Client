@@ -10,11 +10,9 @@ import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import InputLabel from '@material-ui/core/InputLabel'
 
-
 export default class AddAnswersForm extends Component {
 
     render() {
-        console.log(this.props.values);
 
         const { onChange, onSubmit } = this.props
         const { answer1, answer2, answer3, answer4, correct1, correct2, correct3, correct4 } = this.props.values
@@ -46,14 +44,13 @@ export default class AddAnswersForm extends Component {
                                     </InputLabel>
                                     <Select
                                         native
-                                        labelId="demo-simple-select-outlined-label"
                                         id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
                                         value={correct1}
                                         maxwidth="50%"
                                         name="correct1"
-                                        labelWidth="145"
+                                        labelWidth={145}
                                     >
                                         <option></option>
                                         <option value={false}>Incorrect</option>
@@ -81,14 +78,13 @@ export default class AddAnswersForm extends Component {
                                     </InputLabel>
                                     <Select
                                         native
-                                        labelId="demo-simple-select-outlined-label"
                                         id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
                                         value={correct2}
                                         maxwidth="50%"
                                         name="correct2"
-                                        labelWidth="145"
+                                        labelWidth={145}
                                     >
                                         <option></option>
                                         <option value={false}>Incorrect</option>
@@ -116,14 +112,13 @@ export default class AddAnswersForm extends Component {
                                     </InputLabel>
                                     <Select
                                         native
-                                        labelId="demo-simple-select-outlined-label"
                                         id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
                                         value={correct3}
                                         maxwidth="50%"
                                         name="correct3"
-                                        labelWidth="145"
+                                        labelWidth={145}
                                     >
                                         <option></option>
                                         <option value={false}>Incorrect</option>
@@ -151,14 +146,13 @@ export default class AddAnswersForm extends Component {
                                     </InputLabel>
                                     <Select
                                         native
-                                        labelId="demo-simple-select-outlined-label"
                                         id="demo-simple-select-outlined-label"
                                         className="form-control"
                                         onChange={onChange}
                                         value={correct4}
                                         maxwidth="50%"
                                         name="correct4"
-                                        labelWidth="145"
+                                        labelWidth={145}
                                     >
                                         <option></option>
                                         <option value={false}>Incorrect</option>
@@ -182,40 +176,3 @@ export default class AddAnswersForm extends Component {
         )
     }
 }
-
-
-// <Select
-// 										className="form-control"
-// 										onChange={onChange}
-// 										value={categoryId}
-// 										name="categoryId"
-// 									>
-// 										<MenuItem value={0} key="Please pick a category">
-// 											{" "}
-// 											Please pick a category{" "}
-// 										</MenuItem>
-// 										<MenuItem value={1} key="Variables">
-// 											{" "}
-// 											Variables{" "}
-// 										</MenuItem>
-// 										<MenuItem value={2} key="Functions">
-// 											{" "}
-// 											Functions{" "}
-// 										</MenuItem>
-// 										<MenuItem value={3} key="Global">
-// 											{" "}
-// 											Global{" "}
-// 										</MenuItem>
-// 										<MenuItem value={4} key="Local">
-// 											{" "}
-// 											Local{" "}
-// 										</MenuItem>
-// 										<MenuItem value={5} key="Type Coercion">
-// 											{" "}
-// 											Type Coercion{" "}
-// 										</MenuItem>
-// 										<MenuItem value={6} key="Statements">
-// 											{" "}
-// 											Statements{" "}
-// 										</MenuItem>
-// 									</Select>

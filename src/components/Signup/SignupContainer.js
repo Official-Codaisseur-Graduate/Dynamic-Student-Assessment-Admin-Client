@@ -27,20 +27,14 @@ class SignupContainer extends Component {
 	}
 
 	render() {
-			return (			
-				<SignupForm
-					onSubmit = {this.onSubmit}
-					onChange = {this.onChange}
-					values = {this.state}
-				/>
-			)
-		}
-	}
-
-const mapStateToProps = (state) => {
-	return {
-		
+		return (
+			<SignupForm
+				onSubmit={this.onSubmit}
+				onChange={this.onChange}
+				values={this.state}
+			/>
+		)
 	}
 }
 
-export default connect(mapStateToProps, {signup})(SignupContainer)
+export default connect(null, { signup })(SignupContainer)

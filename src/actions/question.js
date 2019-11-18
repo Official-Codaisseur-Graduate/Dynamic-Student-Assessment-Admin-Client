@@ -15,7 +15,7 @@ export const questions = () => {
 			.get(`${baseURL}/question`)
 			.set("Authorization", `Bearer ${user.jwt}`)
 			.then(response => {
-                console.log("response.body in questions", response.body)
+                // console.log("response.body in questions", response.body)
 				dispatch({
 					type: SET_QUESTIONS,
 					payload: response.body

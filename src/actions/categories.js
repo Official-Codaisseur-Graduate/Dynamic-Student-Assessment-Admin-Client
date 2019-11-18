@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
+import { baseURL } from '../constants/baseURL'
 
 export const CATEGORIES_FETCHED = "CATEGORIES_FETCHED";
 
@@ -10,9 +10,8 @@ const categoriesFetched = categories => ({
 
 export const loadCategories = () => (dispatch) => {
 
-  request(`${baseUrl}/category`)
+  request(`${baseURL}/category`)
     .then(response => {
-      // console.log("response of loadCategories()", response)
       dispatch(categoriesFetched(response.body));
     })
     .catch(console.error);

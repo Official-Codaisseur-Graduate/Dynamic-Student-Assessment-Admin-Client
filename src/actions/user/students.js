@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
+import { baseURL } from '../../constants/baseURL'
 
 export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
 
@@ -10,9 +10,8 @@ const studentsFetched = students => ({
 
 export const loadStudents = () => (dispatch) => {
 
-  request(`${baseUrl}/interviewee`)
+  request(`${baseURL}/interviewee`)
     .then(response => {
-      // console.log("response of loadStudents()", response)
       dispatch(studentsFetched(response.body));
     })
     .catch(console.error);

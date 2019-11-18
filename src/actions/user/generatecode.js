@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
+import { baseURL } from '../../constants/baseURL'
 
 export const CODE_GENERATED = "CODE_GENERATED";
 
@@ -11,9 +11,8 @@ const codeGenerated = otp => ({
 export const generateCode = (id) => (dispatch) => {
 
   request
-    .post(`${baseUrl}/test?intervieweeId=${id}`)
+    .post(`${baseURL}/test?intervieweeId=${id}`)
     .then(response => {
-    //   console.log("response of generateCode()", response)
       dispatch(codeGenerated(response.body));
     })
     .catch(console.error);

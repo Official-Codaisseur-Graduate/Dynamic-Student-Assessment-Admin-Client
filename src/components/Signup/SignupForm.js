@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 class SignupForm extends Component {
 	render() {
 		const { onChange, onSubmit } = this.props;
-		const {email, password } = this.props.values;
+		const { email, password } = this.props.values;
 		return (
 
 			<div className="background">
@@ -20,7 +20,7 @@ class SignupForm extends Component {
 					<Card className="card-50 component-center">
 						<CardContent>
 							<Typography variant="h4">
-							<div className="signup-label"><b>Sign Up</b></div>
+								<div className="signup-label"><b>Sign Up</b></div>
 							</Typography>
 
 							<form noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -46,12 +46,12 @@ class SignupForm extends Component {
 									variant="outlined"
 								/>
 
-								<CardActions style={{justifyContent: 'center'}}>
-									<Button 
-									type="submit" 
-									variant="contained"
-									size="large"
-									color="secondary">Sign Up</Button>
+								<CardActions style={{ justifyContent: 'center' }}>
+									<Button
+										type="submit"
+										variant="contained"
+										size="large"
+										color="secondary">Sign Up</Button>
 								</CardActions>
 							</form>
 						</CardContent>
@@ -59,7 +59,7 @@ class SignupForm extends Component {
 				</Container>
 				<span className="spacer-lg"></span>
 				<p className="text-center">
-				<i>Already have an account? </i><Link to="/login">Log in</Link></p>
+					<i>Already have an account? </i><Link to="/login">Log in</Link></p>
 			</div>
 		)
 	}

@@ -44,6 +44,7 @@ export default class Students extends Component {
 	}
 
 	render() {
+
 		return (
 		<div>
 			<Paper className={this.classes.root}>
@@ -62,7 +63,7 @@ export default class Students extends Component {
 								}</TableRow>
 						</TableHead>
 						<TableBody>{
-								!this.props.students.rows ? "Loading..." : (
+								!this.props.students.rows ? null : (
 								this.props.students.rows.slice(this.state.page*this.state.rowsPerPage, this.state.page*this.state.rowsPerPage + this.state.rowsPerPage).map(row => {
 								return (
 									<TableRow hover role="checkbox" tabIndex={-1} key={row.id}>{

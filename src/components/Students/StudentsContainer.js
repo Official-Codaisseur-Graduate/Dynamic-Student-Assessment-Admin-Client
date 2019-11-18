@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Students from './Students'
 import { connect } from 'react-redux'
-import { loadStudents } from '../../actions/user/getusers'
+import { loadStudents } from '../../actions/user/students'
 import { generateCode } from '../../actions/user/generatecode'
 import CodeForm from './CodeForm'
 
