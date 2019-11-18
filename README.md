@@ -91,7 +91,10 @@ Admin users are able to login. If the request to the server is handled successfu
 ### To do: 
 
 **Questions**
-- Fix so that the edit button is working
+- Fix so that the edit button is working (action, reducer) also add a put req in backend
+
+**Students**
+- Impement score?
 
 ### Known issues:
 
