@@ -92,6 +92,7 @@ Admin users are able to login. If the request to the server is handled successfu
 
 **Questions**
 - Fix so that the edit button is working (action, reducer) also add a put req in backend
+- Percentage of students that answered correctly is only hard-coded at the moment. 
 
 **Students**
 - Impement score?
