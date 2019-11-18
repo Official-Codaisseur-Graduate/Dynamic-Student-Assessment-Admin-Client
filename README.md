@@ -66,13 +66,13 @@ Admin users are able to login. If the request to the server is handled successfu
 - After submitting the answers, the app will redirect to /questions endpoint where you can see the newly added question inside the questions list. 
 
 **Questions**: List of all questions for the test stored in the database.
-        *This is done by making a GET request to the database on the /question router.*
-        - Render a list with expandable panels with information about the question
-        - Category of the question
-        - Percentage of students that answered correctly ( hard-coded )
-        - List of all possible answers for that question ( both correct and wrong answers ).
-        - Delete button (working!)
-        - Edit button (not working, just a visible button)
+ *This is done by making a GET request to the database on the /question router.*
+- Render a list with expandable panels with information about the question
+- Category of the question
+- Percentage of students that answered correctly ( hard-coded )
+- List of all possible answers for that question ( both correct and wrong answers ).
+- Delete button (working!)
+- Edit button (not working, just a visible button)
 
 **Students**: List of all students (named interviewees in a table) registered for the test or possible candidates
         *This is done by making a GET request to the database on the `/interviewee` router.*
@@ -90,8 +90,10 @@ Admin users are able to login. If the request to the server is handled successfu
         that can later be used to login to the TEST CLIENT (the site where interviewees will take the test)
 
 
-### To do:
+### To do: 
 
+**Questions**
+- Fix so that the edit button is working
 
 ### Known issues:
 
