@@ -53,14 +53,17 @@ Before launching the app (step 4), please make sure that the server side is up a
 
 ### What is working:
 
-**Sign up**: new users are able to sign up. A new user will be created on the user’s table on     the back end. Please note that newly created users should sign in after signing up (see      “Sign In” point for more info).
+**Sign up**: A new user (admin) is able to sign up. A new user will be created on the admin’s table on     the back end, with the password being encrypted (with the help of bcrypt) Please note that newly created admin should login after signing up, after successfull signup the user will be redirected automatically to login (see      “Login” point for more info).
 
-**Sign In**: users are able to sign in. If the request to the server is handled successfully,     a json web token will be sent back to the client side and stored on Redux state. Please     see “User” state in Redux: it has a “jwt” property which is set to “null” if nobody logged    in or will display the actual json web token after a successful attempt to sign in.
+**Login**: For easy login you can use one of the seeded admins **(email=middletonhicks@assistix.com, password=Brainclip)**
+Admin users are able to login. If the request to the server is handled successfully,     a json web token will be sent back to the client side and stored on Redux state. Please     see “User” state in Redux: it has a “jwt” property which is set to “null” if nobody logged    in or will display the actual json web token after a successful attempt to sign in.
 
 **Logout**: clicking the logout button will dispatch an action that resets the “User” state in    Redux. After being clicked, the jwt will be dropped and its value will go back to “null”. 
 
-**Add question**: new questions can be added in this section of the app.
-        This will trigger a POST request to the /question router. The data sent to the back end comprehends the content of the question and category id (from the drop down menu). If the request is successful, the server will send back the id of the newly added question which is saved in the redux state “idNewQuestion”. The id of the newly added question will be needed  when uploading the answers of the question, see “TO DO” section for more info.
+**Add question**: new questions can be added in this section of the app, at the endpoint: /add-question
+- An admin can add a new question, choose a category and a difficulty level
+- After adding the question, it will automatically (on the same endpoint /add-question) update to give the admin the Add Answers form, where the admin can add four different answer options and choose the option of either correct or incorrect.
+- After submitting the answers, the app will redirect to /questions endpoint where you can see the newly added question inside the questions list. 
 
 **Questions**: List of all questions for the test stored in the database.
         *This is done by making a GET request to the database on the /question router.*
@@ -68,26 +71,27 @@ Before launching the app (step 4), please make sure that the server side is up a
         - Category of the question
         - Percentage of students that answered correctly ( hard-coded )
         - List of all possible answers for that question ( both correct and wrong answers ).
+        - Delete button (working!)
+        - Edit button (not working, just a visible button)
 
-**Students**: List of all students registered for the test or possible candidates
-        *This is done by making a GET request to the database on the `/user` router.*
+**Students**: List of all students (named interviewees in a table) registered for the test or possible candidates
+        *This is done by making a GET request to the database on the `/interviewee` router.*
+        
         - Render a table of entries that are both sortable, exportable and filterable
         - Ability to update data in the table is possible ( ONLY in local state atm).
         - Search function in table 
         - Export table to CSV
+        
         - Adjust the view of the table ( 5, 10 or 20 rows in view )
+        - Pagination is working
+        
+  --> **GENERATE CODE**
+        - At the /students endpoint, you can generate a code by adding the id of the interviewee, 
+        that can later be used to login to the TEST CLIENT (the site where interviewees will take the test)
 
 
 ### To do:
 
-**Add a question** section:
-        In this section the possibility to add answers is missing. The idea is to create a new child component with multiple forms in which the different answers can be uploaded. Beside adding the actual content of the answers, there should be a true/false dropdown option for each answer to set it as right or wrong. The “idNewQuestion” state of Redux is needed to link the answers to the right question in the backend. A good idea would be to make the answers’ form visible to the users only if “idNewQuestion” is present (and not “null”).
-
-**Students** section:
-        Any update in database should trigger a PUT request to the database for the user based on his/her id 
-
 
 ### Known issues:
 
-**Students** section:
-        Pagination in table is not working properly. ( Setting the offset of the entries results in a ‘bug’ )
