@@ -76,19 +76,17 @@ Admin users are able to login. If the request to the server is handled successfu
 
 **Students**: List of all students (named interviewees in a table) registered for the test or possible candidates
         *This is done by making a GET request to the database on the `/interviewee` router.*
-        
+- List of students (aka interviewees) with an email and a id
+- Adjust the view of the table ( 5, 10 or 20 rows in view )
+- Pagination is working
+-  **GENERATE CODE**
+        - At the /students endpoint, you can generate a code by adding the id of the interviewee, 
+        that can later be used to login to the TEST CLIENT (the site where interviewees will take the test)
+
         - Render a table of entries that are both sortable, exportable and filterable
         - Ability to update data in the table is possible ( ONLY in local state atm).
         - Search function in table 
         - Export table to CSV
-        
-        - Adjust the view of the table ( 5, 10 or 20 rows in view )
-        - Pagination is working
-        
-  --> **GENERATE CODE**
-        - At the /students endpoint, you can generate a code by adding the id of the interviewee, 
-        that can later be used to login to the TEST CLIENT (the site where interviewees will take the test)
-
 
 ### To do: 
 
