@@ -56,6 +56,16 @@ class EditQuestionContainer extends Component {
     });
   };
 
+  onCancel = event => {
+    event.preventDefault();
+    this.setState({
+      questionContent: "",
+      categoryId: 0,
+      level: 0
+    });
+    this.props.history.push(`/questions`);
+  };
+
   render() {
     return (
       <div>
@@ -72,6 +82,7 @@ class EditQuestionContainer extends Component {
             onChange={this.onChange}
             values={this.state}
             categories={this.props.categories}
+            onCancel={this.onCancel}
           />
         )}
       </div>

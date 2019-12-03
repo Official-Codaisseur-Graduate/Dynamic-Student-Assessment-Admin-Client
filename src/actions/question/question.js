@@ -59,7 +59,7 @@ export const editQuestion = (questionId, values) => dispatch => {
     .catch(console.error);
 };
 
-// editing an answer
+// editing an array of answers
 export const editAnswers = values => dispatch => {
   request
     .put(`${baseURL}/answers`)

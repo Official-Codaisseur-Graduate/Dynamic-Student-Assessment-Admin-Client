@@ -35,7 +35,10 @@ class ListQuestions extends Component {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography variant="h6">Question {question.id}</Typography>
+                  <Typography variant="h6">
+                    Question{" "}
+                    {questions.findIndex(item => item.id === question.id) + 1}
+                  </Typography>
                   <Typography className="secondary-heading">
                     {question.questionContent}
                   </Typography>
