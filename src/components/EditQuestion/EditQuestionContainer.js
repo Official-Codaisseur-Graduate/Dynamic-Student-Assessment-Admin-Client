@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import EditQuestionForm from "../EditQuestion/EditQuestionForm";
-// import AddAnswerForm from "../AddQuestion/AddAnswerForm";
+import AddQuestionForm from "../AddQuestion/AddQuestionForm";
+import AddAnswerForm from "../AddQuestion/AddAnswerForm";
 import { connect } from "react-redux";
 import { editQuestion, editAnswers } from "../../actions/question/question";
 import { loadCategories } from "../../actions/categories";
@@ -21,7 +21,7 @@ class EditQuestionContainer extends Component {
     this.setState({
       questionContent: "",
       categoryId: 0,
-      initialLevel: 0
+      level: 0
     });
   };
 
@@ -35,7 +35,7 @@ class EditQuestionContainer extends Component {
       answerdata.push({
         answer: this.state[answer],
         correct: this.state[correct],
-        questionId: this.props.newQuestion.id
+        questionId: this.props.match.params.id
       });
       // console.log('answer', answerdata);
     }
@@ -60,17 +60,20 @@ class EditQuestionContainer extends Component {
     return (
       <div>
         hi from edit mode
-        <EditQuestionForm
-          onSubmit={this.onSubmitQuestion}
-          onChange={this.onChange}
-          values={this.state}
-          categories={this.props.categories}
-        />
-        {/* <AddAnswerForm
-          onSubmit={this.onSubmitAnswer}
-          onChange={this.onChange}
-          values={this.state}
-        /> */}
+        {this.state.categoryId === 0 ? (
+          <AddAnswerForm
+            onSubmit={this.onSubmitAnswer}
+            onChange={this.onChange}
+            values={this.state}
+          />
+        ) : (
+          <AddQuestionForm
+            onSubmit={this.onSubmitQuestion}
+            onChange={this.onChange}
+            values={this.state}
+            categories={this.props.categories}
+          />
+        )}
       </div>
     );
   }

@@ -50,43 +50,19 @@ export const deleteQuestion = id => dispatch => {
 };
 
 // editing a question
-export const EDIT_QUESTION_SUCCESS = "EDIT_QUESTION_SUCCESS";
-
-const editQuestionSuccess = newData => ({
-  type: EDIT_QUESTION_SUCCESS,
-  newData
-});
-
 export const editQuestion = (questionId, values) => dispatch => {
   const { id } = questionId;
-  console.log(
-    "hi from edit question action, this is id and values:",
-    id,
-    values
-  );
+
   request
     .put(`${baseURL}/question/${id}`)
     .send(values)
-    .then(response => {
-      dispatch(editQuestionSuccess(response.body));
-    })
     .catch(console.error);
 };
 
 // editing an answer
-export const EDIT_ANSWER_SUCCESS = "EDIT_ANSWER_SUCCESS";
-
-const editAnswerSuccess = newData => ({
-  type: EDIT_ANSWER_SUCCESS,
-  newData
-});
-
-export const editAnswers = (id, values) => dispatch => {
+export const editAnswers = values => dispatch => {
   request
-    .put(`${baseURL}/answer/${id}`)
+    .put(`${baseURL}/answers`)
     .send(values)
-    .then(response => {
-      dispatch(editAnswerSuccess(response.body));
-    })
     .catch(console.error);
 };
