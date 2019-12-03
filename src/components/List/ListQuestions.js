@@ -15,6 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import CloseTwoToneIcon from "@material-ui/icons/CloseTwoTone";
 import CheckTwoToneIcon from "@material-ui/icons/CheckTwoTone";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 class ListQuestions extends Component {
   render() {
@@ -104,15 +105,16 @@ class ListQuestions extends Component {
                       </Typography>
 
                       <Typography gutterBottom>
-                        <Button
-                          type="submit"
-                          size="medium"
-                          color="secondary"
-                          variant="contained"
-                          onClick={() => this.props.onEdit(question.id)}
-                        >
-                          Edit
-                        </Button>
+                        <Link to={`/edit-question/${question.id}`}>
+                          <Button
+                            type="submit"
+                            size="medium"
+                            color="secondary"
+                            variant="contained"
+                          >
+                            Edit
+                          </Button>
+                        </Link>
                       </Typography>
                     </Grid>
                     <Grid item xs={6}>

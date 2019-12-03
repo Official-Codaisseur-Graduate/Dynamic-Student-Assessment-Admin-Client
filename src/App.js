@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
-import { Route } from "react-router-dom"
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 //Stylesheets
-import "./App.css"
-import "typeface-roboto"
+import "./App.css";
+import "typeface-roboto";
 
 //Components
-import NavbarContainer from './components/Navbar/NavbarContainer'
-import LoginContainer from './components/Login/LoginContainer'
-import SignupContainer from './components/Signup/SignupContainer';
-import AddQuestionContainer from './components/AddQuestion/AddQuestionContainer'
-import LogoutContainer from './components/Logout/LogoutContainer'
-import ListContainer from './components/List/ListContainer'
-import StudentsContainer from './components/Students/StudentsContainer';
-import Homepage from './components/Homepage/Homepage';
-import { connect } from 'react-redux';
+import NavbarContainer from "./components/Navbar/NavbarContainer";
+import LoginContainer from "./components/Login/LoginContainer";
+import SignupContainer from "./components/Signup/SignupContainer";
+import AddQuestionContainer from "./components/AddQuestion/AddQuestionContainer";
+import LogoutContainer from "./components/Logout/LogoutContainer";
+import ListContainer from "./components/List/ListContainer";
+import StudentsContainer from "./components/Students/StudentsContainer";
+import Homepage from "./components/Homepage/Homepage";
+import { connect } from "react-redux";
+import EditQuestionContainer from "./components/EditQuestion/EditQuestionContainer";
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
@@ -31,12 +31,21 @@ class App extends Component {
         {!this.props.loggedIn ? (
           <Route path="/" exact component={Homepage} />
         ) : (
-            <div>
-              <Route exact path="/add-question" component={AddQuestionContainer} />
-              <Route exact path="/questions" component={ListContainer} />
-              <Route exact path="/students" component={StudentsContainer} />
-            </div>
-          )}
+          <div>
+            <Route
+              exact
+              path="/add-question"
+              component={AddQuestionContainer}
+            />
+            <Route exact path="/questions" component={ListContainer} />
+            <Route exact path="/students" component={StudentsContainer} />
+            <Route
+              exact
+              path="/edit-question/:id"
+              component={EditQuestionContainer}
+            />
+          </div>
+        )}
       </div>
     );
   }
@@ -49,4 +58,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(App);
-
