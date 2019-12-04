@@ -27,7 +27,7 @@ export default class AddQuestionForm extends Component {
                   label="E-mail"
                   className="form-control-lg-textfield"
                   multiline
-                  rows="4"
+                  rows="1"
                   onChange={onChange}
                   margin="normal"
                   variant="outlined"

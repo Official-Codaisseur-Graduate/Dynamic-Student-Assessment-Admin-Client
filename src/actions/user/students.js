@@ -11,6 +11,10 @@ const studentsFetched = students => ({
 export const loadStudents = () => dispatch => {
   request(`${baseURL}/interviewee`)
     .then(response => {
+      console.log(
+        "what is the response when loading students: ",
+        response.body
+      );
       dispatch(studentsFetched(response.body));
     })
     .catch(console.error);
