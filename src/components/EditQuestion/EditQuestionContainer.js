@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import AddQuestionForm from "./AddQuestionForm";
-import AddAnswerForm from "./AddAnswerForm";
+import AddQuestionForm from "../AddQuestion/AddQuestionForm";
+import AddAnswerForm from "../AddQuestion/AddAnswerForm";
 import { connect } from "react-redux";
-import { addQuestion, addAnswers } from "../../actions/question/question";
+import { editQuestion, editAnswers } from "../../actions/question/question";
 import { loadCategories } from "../../actions/categories";
 
-class AddQuestionContainer extends Component {
+class EditQuestionContainer extends Component {
   state = {
     questionContent: ""
   };
@@ -16,7 +16,7 @@ class AddQuestionContainer extends Component {
 
   onSubmitQuestion = event => {
     event.preventDefault();
-    this.props.addQuestion(this.state);
+    this.props.editQuestion(this.props.match.params, this.state);
 
     this.setState({
       questionContent: "",
@@ -27,7 +27,6 @@ class AddQuestionContainer extends Component {
 
   onSubmitAnswer = event => {
     event.preventDefault();
-    // console.log("New question id:", this.props.newQuestion.id)
 
     let answerdata = [];
     for (let i = 1; i <= 4; i++) {
@@ -36,11 +35,11 @@ class AddQuestionContainer extends Component {
       answerdata.push({
         answer: this.state[answer],
         correct: this.state[correct],
-        questionId: this.props.newQuestion.id
+        questionId: this.props.match.params.id
       });
       // console.log('answer', answerdata);
     }
-    this.props.addAnswers(answerdata);
+    this.props.editAnswers(answerdata);
 
     this.setState({
       questionContent: "",
@@ -70,20 +69,20 @@ class AddQuestionContainer extends Component {
   render() {
     return (
       <div>
-        {!this.props.newQuestion.id && (
+        hi from edit mode
+        {this.state.categoryId === 0 ? (
+          <AddAnswerForm
+            onSubmit={this.onSubmitAnswer}
+            onChange={this.onChange}
+            values={this.state}
+          />
+        ) : (
           <AddQuestionForm
             onSubmit={this.onSubmitQuestion}
             onChange={this.onChange}
             values={this.state}
             categories={this.props.categories}
             onCancel={this.onCancel}
-          />
-        )}
-        {this.props.newQuestion.id && (
-          <AddAnswerForm
-            onSubmit={this.onSubmitAnswer}
-            onChange={this.onChange}
-            values={this.state}
           />
         )}
       </div>
@@ -93,14 +92,14 @@ class AddQuestionContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    newQuestion: state.newQuestion,
     user: state.user,
-    categories: state.categories
+    categories: state.categories,
+    questions: state.questions
   };
 };
 
 export default connect(mapStateToProps, {
-  addQuestion,
-  addAnswers,
+  editQuestion,
+  editAnswers,
   loadCategories
-})(AddQuestionContainer);
+})(EditQuestionContainer);
