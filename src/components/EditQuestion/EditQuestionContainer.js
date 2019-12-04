@@ -69,7 +69,6 @@ class EditQuestionContainer extends Component {
   render() {
     return (
       <div>
-        hi from edit mode
         {this.state.categoryId === 0 ? (
           <AddAnswerForm
             onSubmit={this.onSubmitAnswer}

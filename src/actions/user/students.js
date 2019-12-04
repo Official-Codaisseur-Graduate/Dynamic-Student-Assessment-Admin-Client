@@ -1,5 +1,5 @@
 import request from "superagent";
-import { baseURL } from '../../constants/baseURL'
+import { baseURL } from "../../constants/baseURL";
 
 export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
 
@@ -8,11 +8,22 @@ const studentsFetched = students => ({
   payload: students
 });
 
-export const loadStudents = () => (dispatch) => {
-
+export const loadStudents = () => dispatch => {
   request(`${baseURL}/interviewee`)
     .then(response => {
       dispatch(studentsFetched(response.body));
     })
     .catch(console.error);
+};
+
+export const addStudent = student => dispatch => {
+  request
+    .post(`${baseURL}/interviewee`)
+    .send(student)
+    .then(response => {
+      dispatch(loadStudents());
+    })
+    .catch(error => {
+      console.log("ERROR in Add Student--> ", error.response);
+    });
 };

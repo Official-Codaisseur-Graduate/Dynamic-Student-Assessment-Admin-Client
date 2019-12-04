@@ -108,7 +108,10 @@ class ListQuestions extends Component {
                       </Typography>
 
                       <Typography gutterBottom>
-                        <Link to={`/edit-question/${question.id}`}>
+                        <Link
+                          to={`/edit-question/${question.id}`}
+                          style={{ textDecoration: "none" }}
+                        >
                           <Button
                             type="submit"
                             size="medium"
