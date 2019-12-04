@@ -90,7 +90,7 @@ class ListQuestions extends Component {
                           <ListItemIcon>
                             <AssessmentTwoToneIcon />
                           </ListItemIcon>
-                          <ListItemText primary="50% of students got this correct" />
+                          <ListItemText primary={`${question.successRate}% of students got this correct`} />
                         </ListItem>
                       </List>
                     </Grid>
