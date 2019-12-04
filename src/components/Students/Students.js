@@ -15,8 +15,8 @@ export default class Students extends Component {
   };
 
   columns = [
-    { id: "id", label: "Id", minWidth: 100 },
-    { id: "email", label: "Email Id", minWidth: 170 }
+    { id: "id", label: "Student ID", minWidth: 100 },
+    { id: "email", label: "E-mail", minWidth: 170 }
   ];
   scoreColumn = { id: "score", label: "Score", minWidth: 100 };
 
