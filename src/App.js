@@ -17,6 +17,7 @@ import Homepage from "./components/Homepage/Homepage";
 import { connect } from "react-redux";
 import EditQuestionContainer from "./components/EditQuestion/EditQuestionContainer";
 import AddStudentContainer from "./components/AddStudent/AddStudentContainer";
+import StudentInfo from "./components/Students/StudentInfo";
 
 class App extends Component {
   render() {
@@ -46,6 +47,7 @@ class App extends Component {
               component={EditQuestionContainer}
             />
             <Route exact path="/add-student" component={AddStudentContainer} />
+            <Route exact path="/students/:id" component={StudentInfo} />
           </div>
         )}
       </div>
