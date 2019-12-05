@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 class StudentInfo extends Component {
   render() {
-    const student = this.props.students;
-    return <div>hello world</div>;
+    const student = this.props.match.params.id;
+    return <div>{student}</div>;
   }
 }
 
