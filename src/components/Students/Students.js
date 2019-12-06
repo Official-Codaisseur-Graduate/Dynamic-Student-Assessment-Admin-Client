@@ -89,7 +89,7 @@ export default class Students extends Component {
                               const value = row[column.id];
                               return (
                                 <TableCell key={column.id}>
-                                  <Link to={`/students/${row.id}`}>
+                                  <Link to={`/students/${row.id}`} style={{textDecoration: "none", color: "black"}}>
                                     {value}
                                   </Link>
                                 </TableCell>
