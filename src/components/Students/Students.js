@@ -7,6 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
+import { Link } from "react-router-dom";
 
 export default class Students extends Component {
   state = {
@@ -87,7 +88,11 @@ export default class Students extends Component {
                             {this.columns.map(column => {
                               const value = row[column.id];
                               return (
-                                <TableCell key={column.id}>{value}</TableCell>
+                                <TableCell key={column.id}>
+                                  <Link to={`/students/${row.id}`}>
+                                    {value}
+                                  </Link>
+                                </TableCell>
                               );
                             })}
                             {row.tests.length === 1 ? (
