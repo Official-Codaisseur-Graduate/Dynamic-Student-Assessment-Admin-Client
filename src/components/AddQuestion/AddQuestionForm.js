@@ -14,6 +14,10 @@ export default class AddQuestionForm extends Component {
   render() {
     const { onChange, onSubmit } = this.props;
     const { questionContent, level, categories } = this.props.values;
+    const currentUrl = window.location.href;
+    const currentTitle = currentUrl.includes("edit")
+      ? "Edit question"
+      : "Add a question";
 
     return (
       <div className="background">
@@ -21,7 +25,7 @@ export default class AddQuestionForm extends Component {
           <Card className="card-50 component-center">
             <CardContent>
               <Typography variant="h4">
-                <b>Add a question</b>
+                <b>{currentTitle}</b>
               </Typography>
               <br />
               <form onSubmit={onSubmit} noValidate autoComplete="off">
@@ -98,7 +102,7 @@ export default class AddQuestionForm extends Component {
                 />
                 <CardActions style={{ justifyContent: "center" }}>
                   <Button type="submit" variant="contained" color="secondary">
-                    Add question
+                    {currentTitle}
                   </Button>
                   <Button
                     variant="contained"
