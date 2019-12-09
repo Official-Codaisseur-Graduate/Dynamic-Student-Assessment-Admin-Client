@@ -10,7 +10,6 @@ export const answers = () => {
 		request
 			.get(`${baseURL}/question-all`)
 			.then(response => {
-                console.log("response.body in answers", response.body)
 				dispatch({
 					type: SET_ANSWERS,
 					payload: response.body

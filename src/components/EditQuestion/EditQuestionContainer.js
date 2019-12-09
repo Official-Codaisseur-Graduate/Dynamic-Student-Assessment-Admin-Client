@@ -37,7 +37,6 @@ class EditQuestionContainer extends Component {
         correct: this.state[correct],
         questionId: this.props.match.params.id
       });
-      // console.log('answer', answerdata);
     }
     this.props.editAnswers(answerdata);
 

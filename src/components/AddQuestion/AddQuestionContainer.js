@@ -27,7 +27,6 @@ class AddQuestionContainer extends Component {
 
   onSubmitAnswer = event => {
     event.preventDefault();
-    // console.log("New question id:", this.props.newQuestion.id)
 
     let answerdata = [];
     for (let i = 1; i <= 4; i++) {
@@ -38,7 +37,6 @@ class AddQuestionContainer extends Component {
         correct: this.state[correct],
         questionId: this.props.newQuestion.id
       });
-      // console.log('answer', answerdata);
     }
     this.props.addAnswers(answerdata);
 

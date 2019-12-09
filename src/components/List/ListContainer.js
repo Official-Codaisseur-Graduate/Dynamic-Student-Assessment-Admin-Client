@@ -12,7 +12,6 @@ class ListContainer extends Component {
     }
 
     onClick = (questionId) => {
-        // console.log("question Id ??", questionId)
         this.props.deleteQuestion(questionId)
     }
 
