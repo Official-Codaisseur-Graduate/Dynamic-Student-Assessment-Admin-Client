@@ -59,7 +59,7 @@ Before launching the app (step 4), please make sure that the server side is up a
 
 ### What is working:
 
-![](admin-client.gif)
+![](admin-features.gif)
 
 **Sign up**: A new user (admin) is able to sign up. A new user will be created on the admin’s table on     the back end, with the password being encrypted (with the help of bcrypt) Please note that newly created admin should login after signing up, after successfull signup the user will be redirected automatically to login (see      “Login” point for more info).
 
