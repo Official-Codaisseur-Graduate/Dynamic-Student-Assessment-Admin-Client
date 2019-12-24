@@ -31,7 +31,7 @@ Class 32:
 ### Related repos
 
 - [Server](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Server)
-- [Admin](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Admin-Client)
+- [Test](https://github.com/Official-Codaisseur-Graduate/Dynamic-Student-Assessment-Test-Client)
 
 ### How to set up
 
